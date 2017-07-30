@@ -17,7 +17,9 @@
 
     <script src="./app.js"></script>
     <script src="./controllers/IndexController.js"></script>
+    <script src="./controllers/GalleryController.js"></script>
     <script src="./directives/CustomDirectives.js"></script>
+
 
 </head>
 
@@ -95,7 +97,9 @@
         <div class="bottom-line color2-bg"></div>
     </section>
     <section class="black-bg">
-
+      <div class="container">
+         <div ng-include="'./views/gallery.html'"></div>
+      </div>
     </section>
     <div ng-view> </div>
 

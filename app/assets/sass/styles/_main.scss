@@ -96,8 +96,8 @@ section.blocks {
        left:50%;
         height: 100%;
         width: 100%;
-        max-width: 100vw;
-        max-width: 100vh;
+        // max-width: 100vh;
+        max-height: 100vw;
         border: 6px solid $color1;
         position: absolute;
         bottom: -40px;
@@ -118,3 +118,10 @@ section.blocks {
     }
 }
 
+.galrow  {
+    padding: 30px auto;
+    .col-lg-4{
+    margin-bottom:15px;
+    margin-top:15px;
+}
+}
