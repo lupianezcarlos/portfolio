@@ -1,7 +1,9 @@
 <div class="row galrow" ng-controller="GalCtrl as gallery">
 
-
-    <div class="col-lg-4" ng-repeat="ga in gallery.gal">
-    <div class="cube"></div>
+    <div class="col-lg-4 col-6" ng-repeat="ga in gallery.gal">
+        <cube-style>
+            <div class="cube"></div>
+        </cube-style>
     </div>
+
 </div>
