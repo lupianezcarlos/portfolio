@@ -39,3 +39,20 @@ angular.module('CustomDirectives', [])
             }
         }
     })
+
+    .directive('slide',function($interval, $timeout)  {
+        return {
+         restrict:"AE",
+         link: function(scope, element, attrs){
+
+          scope.start =  function () {
+                console.log('hi')
+                $interval(function() {
+                  console.log('hello')
+                 },1000)
+            }
+                
+         }
+        }
+     
+    })
