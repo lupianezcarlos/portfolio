@@ -10528,7 +10528,7 @@ section.blocks {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 108, ../sass/styles/_main.scss */
+/* line 109, ../sass/styles/_main.scss */
 .rombs-container .romb:nth-child(2) {
   transform-origin: 2% 105%;
   -moz-transform: rotate(-35deg);
@@ -10536,7 +10536,7 @@ section.blocks {
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
 }
-/* line 113, ../sass/styles/_main.scss */
+/* line 114, ../sass/styles/_main.scss */
 .rombs-container .romb:nth-child(3) {
   -moz-transform: rotate(-25deg);
   -ms-transform: rotate(-25deg);
@@ -10545,11 +10545,12 @@ section.blocks {
   transform-origin: 10% 110%;
 }
 
-/* line 121, ../sass/styles/_main.scss */
+/* line 122, ../sass/styles/_main.scss */
 .galrow {
-  padding: 30px auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
-/* line 123, ../sass/styles/_main.scss */
+/* line 125, ../sass/styles/_main.scss */
 .galrow .col-lg-4 {
   margin-bottom: 15px;
   margin-top: 15px;
