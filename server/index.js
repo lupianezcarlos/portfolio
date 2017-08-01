@@ -27,7 +27,12 @@ app.get('/gallery', function (req, res) {
 
     var gallery = _.map(titles, title => ({
         item: title,
-        img: 'http://via.placeholder.com/350x350'
+        img: [
+            'http://via.placeholder.com/350x350',
+            'http://via.placeholder.com/350x350',
+            'http://via.placeholder.com/350x350'
+        ]
+
     }));
     res.send(gallery)
 });
