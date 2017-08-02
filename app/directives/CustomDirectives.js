@@ -43,14 +43,27 @@ angular.module('CustomDirectives', [])
     .directive('slide',function($interval, $timeout)  {
         return {
          restrict:"AE",
+        //  scope: {
+        //      galleryCrtl : '='
+        //  },
          link: function(scope, element, attrs){
-
-          scope.start =  function () {
-                console.log('hi')
-                $interval(function() {
-                  console.log('hello')
+          scope.current = 0;
+          scope.next =  function () {
+              
+                $timeout(function() {
+                 
+                scope.current++;
                  },1000)
+      
             }
+
+             scope.$watch('current',function() {
+                 scope.gallery.images.forEach(function(image) {
+                      image.visible = false;
+                 });
+                     scope.gallery.images[scope.current].visible = true;
+
+             })
                 
          }
         }
