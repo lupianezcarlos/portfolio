@@ -30,7 +30,7 @@ app.get('/gallery', function (req, res) {
         images: [
             {src:'http://lorempixel.com/350/350/sports/'},
             {src:'http://lorempixel.com/350/350/sports/2/'},
-            {src:'http://lorempixel.com/350/350/sports/4/'}
+            {src:'http://lorempixel.com/350/350/sports/5/'}
         ]
 
     }));
