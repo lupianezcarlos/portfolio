@@ -40,19 +40,34 @@ angular.module('CustomDirectives', [])
         }
     })
 
-    .directive('slide',function($interval, $timeout)  {
+    .directive('slide', function ($interval, $timeout) {
         return {
-         restrict:"AE",
-         link: function(scope, element, attrs){
-
-          scope.start =  function () {
-                console.log('hi')
-                $interval(function() {
-                  console.log('hello')
-                 },1000)
+            restrict: "AE",
+            link: function (scope, element, attrs) {
+            scope:   {
+                images: '='
             }
-                
-         }
+
+                scope.start = function () {
+                    scope.current = 0;
+                    if(scope.images.length - 1 > scope.current) {
+
+                    }
+                    $interval(function () {
+                        console.log('hello')
+                    }, 1000)
+                }
+
+                scope.$watch('current',function() {
+                    scope.images.forEach(function(image) {
+                    image.visible = false; // make every image invisible
+                });
+                })
+
+                scope.next = function () {
+                      
+                }
+            }
         }
-     
+
     })
