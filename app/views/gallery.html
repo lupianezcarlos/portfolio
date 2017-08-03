@@ -1,12 +1,22 @@
-<div class="row galrow" ng-controller="GalCtrl as gallery">
+<div class="row galrow" ng-controller="GalCtrl as galleryCrtl">
 
-    <div class="col-lg-4 col-6" ng-repeat="g in gallery.images">
+    <div class="col-lg-4 col-6" ng-repeat="gallery in galleryCrtl.galleryData">
         <cube-style>
-            <div class="cube" ng-model="carlos">
-               <slide>
-                     <img   ng-repeat="i in g.img track by $index" ng-src="{{i}}" ng-class="{'hello':viewMore}" ng-mouseenter="start()" alt="" ng-show="image.visible">
-                </slide>
+             <slide>
+            <div class="cube" ng-mouseover="next()">
+               
+                     
+                     <div ng-repeat="image in gallery.images track by $index">
+
+                      <img    
+                     ng-src="{{image.src}}" 
+                     ng-class="{'hello':viewMore}" 
+                     
+                     ng-show="image.visible"> 
+                       </div>
+               
             </div>
+                     </slide>
         </cube-style>
     </div>
 

@@ -42,6 +42,7 @@ angular.module('CustomDirectives', [])
 
     .directive('slide', function ($interval, $timeout) {
         return {
+<<<<<<< HEAD
             restrict: "AE",
             link: function (scope, element, attrs) {
             scope:   {
@@ -68,6 +69,32 @@ angular.module('CustomDirectives', [])
                       
                 }
             }
+=======
+         restrict:"AE",
+        //  scope: {
+        //      galleryCrtl : '='
+        //  },
+         link: function(scope, element, attrs){
+          scope.current = 0;
+          scope.next =  function () {
+              
+                $timeout(function() {
+                 
+                scope.current++;
+                 },1000)
+      
+            }
+
+             scope.$watch('current',function() {
+                 scope.gallery.images.forEach(function(image) {
+                      image.visible = false;
+                 });
+                     scope.gallery.images[scope.current].visible = true;
+
+             })
+                
+         }
+>>>>>>> cb336cf7b4dd427cee17579cfd5565a43169ae59
         }
 
     })

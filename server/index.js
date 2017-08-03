@@ -27,10 +27,10 @@ app.get('/gallery', function (req, res) {
 
     var gallery = _.map(titles, title => ({
         item: title,
-        img: [
-            'http://via.placeholder.com/350x350',
-            'http://via.placeholder.com/350x350',
-            'http://via.placeholder.com/350x350'
+        images: [
+            {src:'http://lorempixel.com/350/350/sports/'},
+            {src:'http://lorempixel.com/350/350/sports/2/'},
+            {src:'http://lorempixel.com/350/350/sports/4/'}
         ]
 
     }));
