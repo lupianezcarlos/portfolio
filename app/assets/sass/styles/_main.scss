@@ -132,3 +132,19 @@ section.blocks {
     margin-top:15px;
 }
 }
+
+    .line  {
+    height: 6px;
+    background-color: #00bff3;
+    width: 200vw;
+    position: absolute;
+    z-index: 0;
+    &.uno {
+        transform-origin: 0;
+        bottom: 0;
+        left: 0;
+        @include transform(rotate(-45deg)) 
+    }
+    }
+
+    

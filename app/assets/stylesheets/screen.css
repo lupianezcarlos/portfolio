@@ -10560,3 +10560,22 @@ section.blocks {
   margin-bottom: 15px;
   margin-top: 15px;
 }
+
+/* line 136, ../sass/styles/_main.scss */
+.line {
+  height: 6px;
+  background-color: #00bff3;
+  width: 200vw;
+  position: absolute;
+  z-index: 0;
+}
+/* line 142, ../sass/styles/_main.scss */
+.line.uno {
+  transform-origin: 0;
+  bottom: 0;
+  left: 0;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
