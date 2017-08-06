@@ -48,13 +48,19 @@ angular.module('CustomDirectives', [])
         //  },
          link: function(scope, element, attrs){
           scope.current = 0;
-          scope.next =  function () {
+          var timer;
+          scope.start =  function () {
 
-            $timeout(function() {
+          timer =  $timeout(function() {
               
                 if(scope.current ===  scope.gallery.images.length - 1) { console.log( 'hello') ;scope.current = 0}
                 else   scope.current++;
-                    },1000) }
+                    },1000)
+                 }
+             
+            scope.reset = function() {
+                $timeout.cancel(timer)
+            }
 
              scope.$watch('current',function() {
                  scope.gallery.images.forEach(function(image) {

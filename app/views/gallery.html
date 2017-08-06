@@ -3,7 +3,7 @@
     <div class="col-lg-4 col-6" ng-repeat="gallery in galleryCrtl.galleryData">
         <cube-style>
              <slide>
-            <div class="cube" ng-mouseover="next()">
+            <div class="cube" ng-mouseover="start()" ng-mouseleave="reset()">
                
                      
                      <div ng-repeat="image in gallery.images track by $index">
@@ -11,7 +11,6 @@
                       <img    
                      ng-src="{{image.src}}" 
                      ng-class="{'hello':viewMore}" 
-                     
                      ng-show="image.visible"> 
                        </div>
                
