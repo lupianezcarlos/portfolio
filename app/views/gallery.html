@@ -8,9 +8,8 @@
                      
                      <div ng-repeat="image in gallery.images track by $index">
 
-                      <img    
+                      <img  class="img-fluid"   
                      ng-src="{{image.src}}" 
-                     ng-class="{'hello':viewMore}" 
                      ng-show="image.visible"> 
                        </div>
                
