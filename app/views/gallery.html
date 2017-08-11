@@ -3,9 +3,10 @@
     <div class="col-lg-4 col-6" ng-repeat="gallery in galleryCrtl.galleryData">
         <cube-style>
              <slide>
-            <div class="cube" ng-mouseover="start()" ng-mouseleave="reset()">
+
+            <div class="cube" ng-class="{'flip':active}"  ng-click="active=!active " ng-mouseover="start()" ng-mouseleave="reset()">
                
-                     
+                     <h1>{{flip}}</h1>
                      <div ng-repeat="image in gallery.images track by $index">
 
                       <img  class="img-fluid"   

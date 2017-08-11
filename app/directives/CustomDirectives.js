@@ -53,7 +53,7 @@ angular.module('CustomDirectives', [])
 
           timer =  $timeout(function() {
               
-                if(scope.current ===  scope.gallery.images.length - 1) { console.log( 'hello') ;scope.current = 0}
+                if(scope.current ===  scope.gallery.images.length - 1) {scope.current = 0}
                 else   scope.current++;
                     },1000)
                  }
@@ -61,6 +61,7 @@ angular.module('CustomDirectives', [])
             scope.reset = function() {
                 $timeout.cancel(timer)
             }
+            
 
              scope.$watch('current',function() {
                  scope.gallery.images.forEach(function(image) {

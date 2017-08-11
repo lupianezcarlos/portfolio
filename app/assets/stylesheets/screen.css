@@ -10626,3 +10626,28 @@ section.blocks {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+
+/* line 184, ../sass/styles/_main.scss */
+.cube {
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  transition: all 1s;
+}
+/* line 187, ../sass/styles/_main.scss */
+.cube img {
+  display: block;
+}
+
+/* line 189, ../sass/styles/_main.scss */
+.cube.flip {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 190, ../sass/styles/_main.scss */
+.cube.flip img {
+  display: none;
+}
