@@ -182,12 +182,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     }
 
 .cube {
+    background-color: black;
  @include transform(rotate(0));
  @include transition(all 1s);
- img {display: block;}
+//  img {display: block;}
+opacity:1;
 }
 .cube.flip {
-    img {display: none;}
+    // img {display: none;}
+    opacity:.5;
     @include transform(rotateY(180deg))
 }
     
