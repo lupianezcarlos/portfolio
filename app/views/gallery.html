@@ -1,18 +1,18 @@
 <div class="row galrow" ng-controller="GalCtrl as galleryCrtl">
 
-    <div class="col-lg-4 col-6" ng-repeat="gallery in galleryCrtl.galleryData">
+    <div class="col-lg-4 gal-item col-6" ng-repeat="gallery in galleryCrtl.galleryData">
         <cube-style>
              <slide>
 
             <div class="cube" ng-class="{'flip':active}"  ng-click="active=!active " ng-mouseover="start()" ng-mouseleave="reset()">
                
-                     <h1>{{flip}}</h1>
-                     <div ng-repeat="image in gallery.images track by $index">
+                     <div class="gal-img" ng-repeat="image in gallery.images track by $index">
 
-                      <img  class="img-fluid"   
-                     ng-src="{{image.src}}" 
-                     ng-show="image.visible"> 
+                            <img  class="img-fluid"   
+                            ng-src="{{image.src}}" 
+                            ng-show="image.visible"> 
                        </div>
+                       <div class="gal-img-back"></div>
                
             </div>
                      </slide>

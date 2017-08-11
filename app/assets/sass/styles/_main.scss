@@ -179,18 +179,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         left: 0;
         @include transform(rotate(-45deg)) 
     }
+}
+
+.gal-item   {
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -o-perspective: 1000;
+        perspective: 1000;
+
+        .cube {
+            .gal-img {
+                background-color: black;
+                @include transform(rotate(0));
+                @include transition(all 1s);
+                @include transform-style(preserve-3d);
+               //  img {display: block;}
+               opacity:1;
+            }
+        &.flip  {
+            .gal-img {
+                @include transform(rotateY(180deg));
+            }
+        }
     }
 
-.cube {
-    background-color: black;
- @include transform(rotate(0));
- @include transition(all 1s);
-//  img {display: block;}
-opacity:1;
 }
-.cube.flip {
-    // img {display: none;}
-    opacity:.5;
-    @include transform(rotateY(180deg))
-}
-    
