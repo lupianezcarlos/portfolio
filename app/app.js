@@ -16,4 +16,9 @@ angular.module('Myapp',[
     // templateUrl:'./views/gallery.html',
     controller: "GalCtrl"
   })
+  .when('/contact',{
+    templateUrl:'./views/contact.html'
+    // ,
+    // controller: "ContactCtrl"
+  })
 });

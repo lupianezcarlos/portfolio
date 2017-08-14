@@ -10483,42 +10483,47 @@ section.blocks {
 }
 
 /* line 70, ../sass/styles/_main.scss */
+.bg-dark {
+  background-color: #000000;
+}
+
+/* line 73, ../sass/styles/_main.scss */
 .centered-wrapper {
   height: 100%;
   display: table;
 }
 
-/* line 74, ../sass/styles/_main.scss */
+/* line 77, ../sass/styles/_main.scss */
 .centered {
   vertical-align: middle;
   display: table-cell;
 }
 
-/* line 79, ../sass/styles/_main.scss */
+/* line 82, ../sass/styles/_main.scss */
 .inner .textbox {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-/* line 84, ../sass/styles/_main.scss */
+/* line 87, ../sass/styles/_main.scss */
 .title {
   font-weight: bold;
   font-size: 30px;
 }
 
-/* line 88, ../sass/styles/_main.scss */
+/* line 91, ../sass/styles/_main.scss */
 .bolder {
   font-weight: 900;
 }
 
-/* line 91, ../sass/styles/_main.scss */
+/* line 94, ../sass/styles/_main.scss */
 .bannerTitle {
   color: #d0eff7;
   text-align: right;
   font-weight: normal;
   line-height: 1.3;
 }
-/* line 95, ../sass/styles/_main.scss */
+/* line 98, ../sass/styles/_main.scss */
 .bannerTitle span {
   color: #ffffff;
   text-shadow: 1px 1px 4px black;
@@ -10529,25 +10534,25 @@ section.blocks {
   padding: 0 10px;
 }
 
-/* line 106, ../sass/styles/_main.scss */
+/* line 109, ../sass/styles/_main.scss */
 .bigFont {
   text-transform: uppercase;
   font-size: 70px;
   font-weight: bold;
 }
 
-/* line 111, ../sass/styles/_main.scss */
+/* line 114, ../sass/styles/_main.scss */
 .cube {
   background-color: #e6ede6;
   height: 350px;
 }
 
-/* line 115, ../sass/styles/_main.scss */
+/* line 118, ../sass/styles/_main.scss */
 .abs {
   width: 100%;
 }
 
-/* line 119, ../sass/styles/_main.scss */
+/* line 122, ../sass/styles/_main.scss */
 .black-bg {
   background-color: #000000;
   z-index: -1;
@@ -10556,13 +10561,13 @@ section.blocks {
   height: 100%;
 }
 
-/* line 127, ../sass/styles/_main.scss */
+/* line 130, ../sass/styles/_main.scss */
 .rombs-container {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 132, ../sass/styles/_main.scss */
+/* line 135, ../sass/styles/_main.scss */
 .rombs-container .romb {
   transform-origin: -2% 100%;
   left: 50%;
@@ -10573,14 +10578,14 @@ section.blocks {
   position: absolute;
   bottom: -40px;
 }
-/* line 144, ../sass/styles/_main.scss */
+/* line 147, ../sass/styles/_main.scss */
 .rombs-container .romb:first-child {
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 148, ../sass/styles/_main.scss */
+/* line 151, ../sass/styles/_main.scss */
 .rombs-container .romb:nth-child(2) {
   transform-origin: 2% 105%;
   -moz-transform: rotate(-35deg);
@@ -10588,7 +10593,7 @@ section.blocks {
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
 }
-/* line 153, ../sass/styles/_main.scss */
+/* line 156, ../sass/styles/_main.scss */
 .rombs-container .romb:nth-child(3) {
   -moz-transform: rotate(-25deg);
   -ms-transform: rotate(-25deg);
@@ -10597,18 +10602,18 @@ section.blocks {
   transform-origin: 10% 110%;
 }
 
-/* line 161, ../sass/styles/_main.scss */
+/* line 164, ../sass/styles/_main.scss */
 .galrow {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-/* line 164, ../sass/styles/_main.scss */
+/* line 167, ../sass/styles/_main.scss */
 .galrow .col-lg-4 {
   margin-bottom: 15px;
   margin-top: 15px;
 }
 
-/* line 170, ../sass/styles/_main.scss */
+/* line 173, ../sass/styles/_main.scss */
 .line {
   height: 6px;
   background-color: #00bff3;
@@ -10616,7 +10621,7 @@ section.blocks {
   position: absolute;
   z-index: 0;
 }
-/* line 176, ../sass/styles/_main.scss */
+/* line 179, ../sass/styles/_main.scss */
 .line.uno {
   transform-origin: 0;
   bottom: 0;
@@ -10627,18 +10632,18 @@ section.blocks {
   transform: rotate(-45deg);
 }
 
-/* line 184, ../sass/styles/_main.scss */
+/* line 187, ../sass/styles/_main.scss */
 .gal-item {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 190, ../sass/styles/_main.scss */
+/* line 193, ../sass/styles/_main.scss */
 .gal-item .cube {
   overflow: visible;
 }
-/* line 192, ../sass/styles/_main.scss */
+/* line 195, ../sass/styles/_main.scss */
 .gal-item .cube .gal-img {
   background-color: black;
   -moz-transform: rotate(0);
@@ -10651,26 +10656,90 @@ section.blocks {
   transform-style: preserve-3d;
   opacity: 1;
 }
-/* line 200, ../sass/styles/_main.scss */
+/* line 203, ../sass/styles/_main.scss */
 .gal-item .cube .gal-img .img-fluid {
   -moz-transform: translateX(0%);
   -ms-transform: translateX(0%);
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  transition: all 0.4s;
+  transition: all 0.5s;
   opacity: 1;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 207, ../sass/styles/_main.scss */
-.gal-item .cube .gal-img .img-fluid.ng-hide {
+/* line 210, ../sass/styles/_main.scss */
+.gal-item .cube .gal-img .img-fluid.ng-hide-add {
   opacity: 0;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
 }
-/* line 214, ../sass/styles/_main.scss */
+/* line 217, ../sass/styles/_main.scss */
 .gal-item .cube.flip .gal-img {
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+/* line 224, ../sass/styles/_main.scss */
+.form-group {
+  padding-top: 20px;
+  position: relative;
+}
+
+/* line 228, ../sass/styles/_main.scss */
+label {
+  opacity: 0;
+  position: absolute;
+  transition: .2s bottom, .2s opacity, .2s font-size;
+  bottom: 0;
+  left: 30px;
+  z-index: 1;
+  font-size: 1em;
+}
+
+/* line 237, ../sass/styles/_main.scss */
+input.form-control {
+  background-color: transparent !important;
+  color: #e6ede6;
+  border: none;
+  box-shadow: 0 -2px 0px 0px gray inset;
+  border-radius: 0;
+  height: 50px;
+}
+
+/* line 246, ../sass/styles/_main.scss */
+input:focus ~ label, input:not(:placeholder-shown) ~ label {
+  bottom: 80%;
+  opacity: 1;
+  left: 20px;
+  font-size: .8em;
+  margin-bottom: 0;
+  color: #00bff3;
+}
+
+/* line 254, ../sass/styles/_main.scss */
+input[type=textarea] {
+  height: 80px;
+}
+
+/* line 258, ../sass/styles/_main.scss */
+.line {
+  transition: width 0.2s;
+  width: 0;
+  left: 15px;
+  height: 2px;
+  height: 2px;
+  background-color: #00bff3;
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 269, ../sass/styles/_main.scss */
+input:focus ~ .line, input:not(:placeholder-shown) ~ .line {
+  content: '';
+  width: calc(100% - 30px);
 }
