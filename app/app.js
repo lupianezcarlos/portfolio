@@ -2,7 +2,8 @@ angular.module('Myapp',[
   'ngRoute',
   'IndexController',
   'GalleryController',
-  'CustomDirectives'
+  'CustomDirectives',
+  'ngAnimate'
 ])
    
 .config(function($routeProvider, $locationProvider) {

@@ -10634,7 +10634,11 @@ section.blocks {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 191, ../sass/styles/_main.scss */
+/* line 190, ../sass/styles/_main.scss */
+.gal-item .cube {
+  overflow: visible;
+}
+/* line 192, ../sass/styles/_main.scss */
 .gal-item .cube .gal-img {
   background-color: black;
   -moz-transform: rotate(0);
@@ -10648,6 +10652,22 @@ section.blocks {
   opacity: 1;
 }
 /* line 200, ../sass/styles/_main.scss */
+.gal-item .cube .gal-img .img-fluid {
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  transition: all 0.4s;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 207, ../sass/styles/_main.scss */
+.gal-item .cube .gal-img .img-fluid.ng-hide {
+  opacity: 0;
+}
+/* line 214, ../sass/styles/_main.scss */
 .gal-item .cube.flip .gal-img {
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);

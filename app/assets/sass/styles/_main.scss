@@ -188,13 +188,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         perspective: 1000;
 
         .cube {
+            overflow: visible;
             .gal-img {
                 background-color: black;
                 @include transform(rotate(0));
                 @include transition(all 1s);
                 @include transform-style(preserve-3d);
+               
                //  img {display: block;}
                opacity:1;
+               .img-fluid {
+                   @include transform(translateX(0%));
+                   @include transition(all .4s);
+                   opacity: 1;
+                   position: absolute;
+                   top: 0;
+                   left:0;
+                   &.ng-hide {
+                    opacity: 0;
+                    //    @include transform(translateX(100%));
+                   }
+               }
             }
         &.flip  {
             .gal-img {

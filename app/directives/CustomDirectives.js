@@ -55,7 +55,7 @@ angular.module('CustomDirectives', [])
               
                 if(scope.current ===  scope.gallery.images.length - 1) {scope.current = 0}
                 else   scope.current++;
-                    },1000)
+                    },2000)
                  }
              
             scope.reset = function() {
