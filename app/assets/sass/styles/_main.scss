@@ -54,8 +54,16 @@ background: linear-gradient(135deg, #cedbe9 0%,#6199c7 59%,#3a8bc2 84%,#26558b 1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     z-index: 2;
 }
-
+.centerWrapper {
+    width: 100%;
+    display: table;
+    .verticalCenter {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
 .bottom-line {
+    text-align: center;
     z-index: 9;
     position: absolute;
     width: 100%;    
@@ -63,12 +71,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     left: 0;
     height: 50px;
     background-color: $dark;
+    .go-down {
+        cursor: pointer;
+        line-height: 18px;
+        position: relative;
+        &:after {
+            white-space: nowrap;
+            @include transition(width .3s);
+            height: 100%;
+            width: 0;
+            overflow: hidden;
+            // @include transform(scaleY(0));
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            color: yellow;
+        }
+        &:hover:after {
+            width: 100%;
+            
+            // @include transform(scaleY(1));
+        }
+    }
+
 }
 .color2-bg {
     background-color: $color2;
 }
 .bg-dark {
     background-color: $dark;
+}
+.bg-dark-gray {
+    background-color: $dark-gray;
 }
 .centered-wrapper {
     height: 100%;
@@ -221,6 +257,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     }
 
 }
+.color1 {
+    color: $color1;
+}
 .form-group {
     padding-top: 20px;
     position: relative;
@@ -235,13 +274,17 @@ label {
     font-size:1em;
 }
 input.form-control {
+    font-weight: 100;
     background-color: transparent !important;
-    color: $color2;
+    color: white;
     border: none;
     box-shadow: 0 -2px 0px 0px gray inset;
     border-radius: 0;
     height: 50px;
     // border-bottom: 1px solid $color1;
+    &:focus {
+        color: lightgray;
+    }
 }
 input:focus ~ label, input:not(:placeholder-shown) ~ label {
     bottom: 80%;
