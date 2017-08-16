@@ -76,11 +76,34 @@ angular.module('CustomDirectives', [])
 
     })
 
-    // .directive('goDown',function() {
-    //    return  {
-    //         restrict: "AE",
-    //         link: function(scope, element,attrs ) {
-    //              element
-    //         }
-    //     }
-    // })
+    .directive('goDown',function($window) {
+       return  {
+            restrict: "A",
+            link: function(scope, element,attrs ) {
+                 $win = angular.element($window);
+                  
+                  scope.goNext = function() {
+                    eleParent = element.parent();
+                    eleTop = eleParent.offset().top + eleParent.height();
+               
+                    scrollToNext(eleTop, 400);
+
+                  }
+                 
+
+                  function scrollToNext(eleTop, duration) {
+                      var scrollStep = eleTop / (duration / 5);
+                          
+                      var scrollInterval = setInterval(function(){  
+                        if (window.scrollY <= eleTop) {
+                          window.scrollBy(0, scrollStep);
+                        } else {
+                          clearInterval(scrollInterval); 
+                        }
+                      },1);	
+                  }
+                  
+            }
+            
+        }
+    })
