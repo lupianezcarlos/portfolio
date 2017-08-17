@@ -51,11 +51,10 @@ angular.module('CustomDirectives', [])
           var timer;
           scope.start =  function () {
 
-          timer =  $timeout(function() {
-              
+            timer =  $timeout(function() {
                 if(scope.current ===  scope.gallery.images.length - 1) {scope.current = 0}
                 else   scope.current++;
-                    },2000)
+                    },1000)
                  }
              
             scope.reset = function() {
@@ -78,25 +77,26 @@ angular.module('CustomDirectives', [])
 
     .directive('goDown',function($window) {
        return  {
-            restrict: "A",
+            restrict: "EA",
+            // scope: {
+            //         goNext : '='
+            // },
             link: function(scope, element,attrs ) {
                  $win = angular.element($window);
-                  
-                  scope.goNext = function() {
-                    eleParent = element.parent();
-                    eleTop = eleParent.offset().top + eleParent.height();
-               
-                    scrollToNext(eleTop, 400);
 
-                  }
-                 
+                  element.on('click',function() {
+                      eleParent = element.parent();
+                      eleTop = eleParent.offset().top + eleParent.height();
+  
+                      scrollToNext(eleTop, 400);
+                  })
 
                   function scrollToNext(eleTop, duration) {
-                      var scrollStep = eleTop / (duration / 5);
+                    //   var scrollStep = eleTop / (duration / 5);
                           
                       var scrollInterval = setInterval(function(){  
                         if (window.scrollY <= eleTop) {
-                          window.scrollBy(0, scrollStep);
+                          window.scrollBy(0, 10);
                         } else {
                           clearInterval(scrollInterval); 
                         }
@@ -105,5 +105,14 @@ angular.module('CustomDirectives', [])
                   
             }
             
+        }
+    })
+    .directive('sectionNav',function($rootScope, $location) {
+        return {
+            restrict:'AE',
+            link:function(scope,element,attrs) {
+             
+                   console.log($rootScope)
+            }
         }
     })

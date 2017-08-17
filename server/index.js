@@ -8,13 +8,13 @@ var express = require('express'),
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, '../app')));
-
+app.use('/img',express.static(path.join(__dirname, '../images')));
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../app/index.html'))
 });
 
-
+console.log(path.join(__dirname, '/img'))
 
 app.get('/carlos', function (req, res) {
     res.json({ name: 'al' })
@@ -28,9 +28,9 @@ app.get('/gallery', function (req, res) {
     var gallery = _.map(titles, title => ({
         item: title,
         images: [
-            {src:'http://lorempixel.com/350/350/sports/'},
-            {src:'http://lorempixel.com/350/350/sports/2/'},
-            {src:'http://lorempixel.com/350/350/sports/5/'}
+            {src:'http://localhost:3000/img/lorempixel.jpg'},
+            {src:'http://localhost:3000/img/lorempixel-1.jpg'},
+            {src:'http://localhost:3000/img/lorempixel-2.jpg'}
         ]
 
     }));

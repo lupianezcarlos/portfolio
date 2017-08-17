@@ -95,7 +95,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
             // @include transform(scaleY(1));
         }
     }
-
+  &.color2-bg {
+      .go-down {
+          color: $dark;
+          &:after {
+              color: $color1;
+          }
+      }
+  }
 }
 .color2-bg {
     background-color: $color2;
@@ -243,9 +250,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
                    position: absolute;
                    top: 0;
                    left:0;
-                   &.ng-hide-add {
-                    opacity: 0;
-                       @include transform(translateX(-100%));
+                   &.ng-hide:not(.ng-hide-animate) {
+                       
                    }
                }
             }
@@ -256,6 +262,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         }
     }
 
+}
+.section-nav {
+    background-color: rgba($color1,0.4); 
 }
 .color1 {
     color: $color1;

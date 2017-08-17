@@ -39,9 +39,9 @@
             </div>
         </div>
 
-        <div class="bottom-line centerWrapper">
-            <div class="verticalCenter center">
-                    <span class="color1 go-down" go-down ng-click="goNext()" data-text='next section'>next section</span>  
+        <div class="bottom-line  centerWrapper">
+            <div class="verticalCenter uno center">
+                    <span class="color1 uno go-down" go-down  data-text='next section'>next section</span>  
             </div>
         </div>
     </section>
@@ -117,22 +117,18 @@
 
         </div>
 
-        <div class="bottom-line color2-bg"></div>
+        <div class="bottom-line centerWrapper  color2-bg">
+            <div class="verticalCenter dos  center">
+                    <span class="color1 go-down dos" go-down ng-click="goNext()" data-text='next section'>next section</span>  
+            </div>
+        </div>
     </section>
-    <section class="">
-        <div class="black-bg"></div>
-        <spans class="line uno"></spans>
-        <spans class="line"></spans>
-        <spans class="line"></spans>
-        <spans class="line"></spans>
-        <div class="lines">
-
-        </div>
-        <div class="container">
-            <div ng-include="'./views/gallery.html'"></div>
-        </div>
+   <div class="section-nav center">
+        <a ng-href="/#!/">go back to the gallery</a>
         <a ng-href="/#!/contact">click to contact me</a>
-    </section>
+   </div>
+            <!-- <div ng-include="'./views/gallery.html'"></div> -->
+
 
     <div ng-view> </div>
 

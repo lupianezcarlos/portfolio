@@ -1,3 +1,14 @@
+<section class="">
+    <div class="black-bg"></div>
+    <spans class="line uno"></spans>
+    <spans class="line"></spans>
+    <spans class="line"></spans>
+    <spans class="line"></spans>
+    <div class="lines">
+
+    </div>
+    <div class="container">
+          
 <div class="row galrow" ng-controller="GalCtrl as galleryCrtl">
 
     <div class="col-lg-4 gal-item col-6" ng-repeat="gallery in galleryCrtl.galleryData">
@@ -6,7 +17,7 @@
 
             <div class="cube" ng-class="{'flip':active}"  ng-click="active=!active " ng-mouseover="start()" ng-mouseleave="reset()">
                
-                     <div class="gal-img" ng-repeat="image in gallery.images track by $index">
+                     <div class="gal-img" ng-repeat="image in gallery.images track by $index"  ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
 
                             <img  class="img-fluid"   
                             ng-src="{{image.src}}" 
@@ -20,3 +31,6 @@
     </div>
 
 </div>
+</div>
+
+</section>

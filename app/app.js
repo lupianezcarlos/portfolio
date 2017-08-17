@@ -13,7 +13,7 @@ angular.module('Myapp',[
     // controller: 'IndexCtrl'
   })
   .when('/',{
-    // templateUrl:'./views/gallery.html',
+    templateUrl:'./views/gallery.html',
     controller: "GalCtrl"
   })
   .when('/contact',{
