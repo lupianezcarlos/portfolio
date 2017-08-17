@@ -2,6 +2,7 @@ angular.module('Myapp',[
   'ngRoute',
   'IndexController',
   'GalleryController',
+  'GeneralControllers',
   'CustomDirectives',
   'ngAnimate'
 ])

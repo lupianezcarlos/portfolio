@@ -19,6 +19,7 @@
     <script src="./app.js"></script>
     <script src="./controllers/IndexController.js"></script>
     <script src="./controllers/GalleryController.js"></script>
+    <script src="./controllers/GeneralControllers.js"></script>
     <script src="./directives/CustomDirectives.js"></script>
 
 
@@ -93,8 +94,6 @@
                                 <div class="inner">
                                     <div class="cube hidden-md-down"></div>
                                     <div class="row">
-
-
                                         <div class="textbox col-md-6 col-lg-12">
                                             <div class="title"> Lorem ipsum dolor </div>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -122,12 +121,16 @@
                     <span class="color1 go-down dos" go-down ng-click="goNext()" data-text='next section'>next section</span>  
             </div>
         </div>
+        <div class="section-nav center" ng-controller="NavController as Ctrl" >
+                <div class="navigation">
+                     <a ng-href="/#!/" ng-show="Ctrl.$location.path() != '/'">go back to the gallery</a>
+                     <a ng-href="/#!/contact" ng-show="Ctrl.$location.path() != '/contact'">click to contact me</a>
+                </div>
+        </div>
     </section>
-   <div class="section-nav center">
-        <a ng-href="/#!/">go back to the gallery</a>
-        <a ng-href="/#!/contact">click to contact me</a>
-   </div>
-            <!-- <div ng-include="'./views/gallery.html'"></div> -->
+
+
+   
 
 
     <div ng-view> </div>

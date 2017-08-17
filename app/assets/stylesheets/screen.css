@@ -10727,21 +10727,26 @@ section.blocks {
 
 /* line 266, ../sass/styles/_main.scss */
 .section-nav {
-  background-color: rgba(0, 191, 243, 0.4);
+  background-color: #00bff3;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  bottom: -40px;
+  height: 40px;
 }
 
-/* line 269, ../sass/styles/_main.scss */
+/* line 274, ../sass/styles/_main.scss */
 .color1 {
   color: #00bff3;
 }
 
-/* line 272, ../sass/styles/_main.scss */
+/* line 277, ../sass/styles/_main.scss */
 .form-group {
   padding-top: 20px;
   position: relative;
 }
 
-/* line 276, ../sass/styles/_main.scss */
+/* line 281, ../sass/styles/_main.scss */
 label {
   opacity: 0;
   position: absolute;
@@ -10752,7 +10757,7 @@ label {
   font-size: 1em;
 }
 
-/* line 285, ../sass/styles/_main.scss */
+/* line 290, ../sass/styles/_main.scss */
 input.form-control {
   font-weight: 100;
   background-color: transparent !important;
@@ -10762,12 +10767,12 @@ input.form-control {
   border-radius: 0;
   height: 50px;
 }
-/* line 294, ../sass/styles/_main.scss */
+/* line 299, ../sass/styles/_main.scss */
 input.form-control:focus {
   color: lightgray;
 }
 
-/* line 298, ../sass/styles/_main.scss */
+/* line 303, ../sass/styles/_main.scss */
 input:focus ~ label, input:not(:placeholder-shown) ~ label {
   bottom: 80%;
   opacity: 1;
@@ -10777,12 +10782,12 @@ input:focus ~ label, input:not(:placeholder-shown) ~ label {
   color: #00bff3;
 }
 
-/* line 306, ../sass/styles/_main.scss */
+/* line 311, ../sass/styles/_main.scss */
 input[type=textarea] {
   height: 80px;
 }
 
-/* line 310, ../sass/styles/_main.scss */
+/* line 315, ../sass/styles/_main.scss */
 .line {
   transition: width 0.2s;
   width: 0;
@@ -10794,7 +10799,7 @@ input[type=textarea] {
   bottom: 0;
 }
 
-/* line 321, ../sass/styles/_main.scss */
+/* line 326, ../sass/styles/_main.scss */
 input:focus ~ .line, input:not(:placeholder-shown) ~ .line {
   content: '';
   width: calc(100% - 30px);

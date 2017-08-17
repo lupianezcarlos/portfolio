@@ -107,12 +107,12 @@ angular.module('CustomDirectives', [])
             
         }
     })
-    .directive('sectionNav',function($rootScope, $location) {
+    .directive('sectionNav',function($location) {
         return {
             restrict:'AE',
             link:function(scope,element,attrs) {
-             
-                   console.log($rootScope)
+                console.log($location.path())
+                   scope.hideLink = $location.path() === '/contact'
             }
         }
     })
