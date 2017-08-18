@@ -121,7 +121,7 @@
                     <span class="color1 go-down dos" go-down ng-click="goNext()" data-text='next section'>next section</span>  
             </div>
         </div>
-        <div class="section-nav center" ng-controller="NavController as Ctrl" >
+        <div class="section-nav center" section-nav ng-controller="NavController as Ctrl" >
                 <div class="navigation">
                      <a ng-href="/#!/" ng-show="Ctrl.$location.path() != '/'">go back to the gallery</a>
                      <a ng-href="/#!/contact" ng-show="Ctrl.$location.path() != '/contact'">click to contact me</a>

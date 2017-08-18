@@ -86,7 +86,7 @@ angular.module('CustomDirectives', [])
 
                   element.on('click',function() {
                       eleParent = element.parent();
-                      eleTop = eleParent.offset().top + eleParent.height();
+                      let eleTop = eleParent.offset().top + eleParent.height();
   
                       scrollToNext(eleTop, 400);
                   })
@@ -107,12 +107,31 @@ angular.module('CustomDirectives', [])
             
         }
     })
-    .directive('sectionNav',function($location) {
+    .directive('sectionNav',function($location, $window, $timeout) {
         return {
             restrict:'AE',
             link:function(scope,element,attrs) {
-                console.log($location.path())
-                   scope.hideLink = $location.path() === '/contact'
+             let  eleTop = element.offset().top;
+
+              angular.element(window).on('scroll',function() {
+
+            //    let timer = $timeout(function() {
+            //           if($window.scrollY > eleTop) 
+            //                   element.addClass('active');
+            //    },10)
+            //     clearTimeout(timer)
+              userScrolled = true;
+              })
+              
+              setInterval(function() {
+                if (userScrolled) {
+                   if($window.scrollY > eleTop) { element.addClass('active'); userScrolled = false; }
+                   else {
+                      element.removeClass('active');
+                   }
+                }
+              }, 10);
+
             }
         }
     })
