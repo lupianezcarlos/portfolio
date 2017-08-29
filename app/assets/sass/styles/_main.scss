@@ -264,13 +264,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
 
 }
 .section-nav {
+    @include transition(all .4s);
     background-color: $color1;
     position: absolute;
     z-index: 999;
     width: 100%;
-    bottom: -40px;
+    bottom:0;
+    z-index: 0;
     height: 40px;
+    &.active {
+        position: fixed;
+        top: 0;
+        z-index: 2;
+    }
 }
+
 .color1 {
     color: $color1;
 }

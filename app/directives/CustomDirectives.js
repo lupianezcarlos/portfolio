@@ -67,7 +67,6 @@ angular.module('CustomDirectives', [])
                       image.visible = false;
                  });
                      scope.gallery.images[scope.current].visible = true;
-
              })
                 
          }
@@ -106,28 +105,37 @@ angular.module('CustomDirectives', [])
                         }
                       },1);	
                   }
-                  
             }
-            
         }
     })
+
     .directive('sectionNav',function($location, $window, $timeout) {
         return {
             restrict:'AE',
             link:function(scope,element,attrs) {
              let  eleTop = element.offset().top;
+             let winScroll = $window.scrollY;
              userScrolled = false;
+
               angular.element(window).on('scroll',function() {
               userScrolled = true;
-              })
-              
-              setInterval(function() {
+              });
+
+              angular.element(window).on('resize',function() {
+                eleTop = element.offset().top;
+               
+              });
+            
+             let intV =  setInterval(function() {
+                winScroll = $window.scrollY;
+                
                 if (userScrolled) {
-                   if($window.scrollY > eleTop) { element.addClass('active'); userScrolled = false; }
+                    console.log(winScroll)
+                   if(winScroll > eleTop) { element.addClass('active'); userScrolled = false; }
                    else {
                       element.removeClass('active');
                    }
-                }
+                } 
               }, 10);
 
             }

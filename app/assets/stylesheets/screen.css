@@ -10727,26 +10727,34 @@ section.blocks {
 
 /* line 266, ../sass/styles/_main.scss */
 .section-nav {
+  transition: all 0.4s;
   background-color: #00bff3;
   position: absolute;
   z-index: 999;
   width: 100%;
-  bottom: -40px;
+  bottom: 0;
+  z-index: 0;
   height: 40px;
 }
+/* line 275, ../sass/styles/_main.scss */
+.section-nav.active {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
 
-/* line 274, ../sass/styles/_main.scss */
+/* line 282, ../sass/styles/_main.scss */
 .color1 {
   color: #00bff3;
 }
 
-/* line 277, ../sass/styles/_main.scss */
+/* line 285, ../sass/styles/_main.scss */
 .form-group {
   padding-top: 20px;
   position: relative;
 }
 
-/* line 281, ../sass/styles/_main.scss */
+/* line 289, ../sass/styles/_main.scss */
 label {
   opacity: 0;
   position: absolute;
@@ -10757,7 +10765,7 @@ label {
   font-size: 1em;
 }
 
-/* line 290, ../sass/styles/_main.scss */
+/* line 298, ../sass/styles/_main.scss */
 input.form-control {
   font-weight: 100;
   background-color: transparent !important;
@@ -10767,12 +10775,12 @@ input.form-control {
   border-radius: 0;
   height: 50px;
 }
-/* line 299, ../sass/styles/_main.scss */
+/* line 307, ../sass/styles/_main.scss */
 input.form-control:focus {
   color: lightgray;
 }
 
-/* line 303, ../sass/styles/_main.scss */
+/* line 311, ../sass/styles/_main.scss */
 input:focus ~ label, input:not(:placeholder-shown) ~ label {
   bottom: 80%;
   opacity: 1;
@@ -10782,12 +10790,12 @@ input:focus ~ label, input:not(:placeholder-shown) ~ label {
   color: #00bff3;
 }
 
-/* line 311, ../sass/styles/_main.scss */
+/* line 319, ../sass/styles/_main.scss */
 input[type=textarea] {
   height: 80px;
 }
 
-/* line 315, ../sass/styles/_main.scss */
+/* line 323, ../sass/styles/_main.scss */
 .line {
   transition: width 0.2s;
   width: 0;
@@ -10799,7 +10807,7 @@ input[type=textarea] {
   bottom: 0;
 }
 
-/* line 326, ../sass/styles/_main.scss */
+/* line 334, ../sass/styles/_main.scss */
 input:focus ~ .line, input:not(:placeholder-shown) ~ .line {
   content: '';
   width: calc(100% - 30px);
