@@ -75,7 +75,7 @@ angular.module('CustomDirectives', [])
 
     })
 
-    .directive('goDown',function($window) {
+    .directive('goDown',function($window, $document) {
        return  {
             restrict: "EA",
             // scope: {
@@ -91,14 +91,18 @@ angular.module('CustomDirectives', [])
                       scrollToNext(eleTop, 400);
                   })
 
+
                   function scrollToNext(eleTop, duration) {
                     //   var scrollStep = eleTop / (duration / 5);
                           
                       var scrollInterval = setInterval(function(){  
-                        if (window.scrollY <= eleTop) {
+                        if (window.scrollY <= eleTop ) {
                           window.scrollBy(0, 10);
                         } else {
                           clearInterval(scrollInterval); 
+                        } 
+                        if($document.height() <= parseInt($window.innerHeight) + parseInt(window.scrollY)) {
+                             clearInterval(scrollInterval); 
                         }
                       },1);	
                   }
@@ -112,14 +116,8 @@ angular.module('CustomDirectives', [])
             restrict:'AE',
             link:function(scope,element,attrs) {
              let  eleTop = element.offset().top;
-
+             userScrolled = false;
               angular.element(window).on('scroll',function() {
-
-            //    let timer = $timeout(function() {
-            //           if($window.scrollY > eleTop) 
-            //                   element.addClass('active');
-            //    },10)
-            //     clearTimeout(timer)
               userScrolled = true;
               })
               
