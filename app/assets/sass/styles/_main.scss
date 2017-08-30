@@ -234,6 +234,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         perspective: 1000;
 
         .cube {
+            background-color: transparent;
             overflow: visible;
             .gal-img {
                 background-color: black;
@@ -258,6 +259,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         &.flip  {
             .gal-img {
                 @include transform(rotateY(180deg));
+                -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+                backface-visibility: hidden;
             }
         }
     }
