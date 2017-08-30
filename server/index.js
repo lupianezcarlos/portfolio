@@ -37,9 +37,10 @@ app.get('/gallery', function (req, res) {
     res.send(gallery)
 });
 
+const port = process.env.PORT;
 
-app.listen(3000, function () {
-    console.log('Server listening on port ' + this.address().port);
+app.listen(port, function () {
+    console.log('Server listening on port ' + port);
 })
 
 
