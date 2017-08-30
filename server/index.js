@@ -38,7 +38,7 @@ app.get('/gallery', function (req, res) {
 });
 
 
-app.listen(80, function () {
+app.listen(3000, function () {
     console.log('Server listening on port ' + this.address().port);
 })
 
