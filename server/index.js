@@ -28,9 +28,9 @@ app.get('/gallery', function (req, res) {
     var gallery = _.map(titles, title => ({
         item: title,
         images: [
-            {src:'http://localhost:3000/img/lorempixel.jpg'},
-            {src:'http://localhost:3000/img/lorempixel-1.jpg'},
-            {src:'http://localhost:3000/img/lorempixel-2.jpg'}
+            {src:'/img/lorempixel.jpg'},
+            {src:'/img/lorempixel-1.jpg'},
+            {src:'/img/lorempixel-2.jpg'}
         ]
 
     }));
