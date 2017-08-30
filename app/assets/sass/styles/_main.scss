@@ -263,19 +263,62 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     }
 
 }
+$provissionalColor: #1eaba0;
 .section-nav {
+    padding-top: 4px;
     @include transition(all .4s);
-    background-color: $color1;
+    background-color: $provissionalColor;
     position: absolute;
     z-index: 999;
     width: 100%;
     bottom:0;
     z-index: 0;
-    height: 40px;
+    height: 50px;
     &.active {
         position: fixed;
         top: 0;
         z-index: 2;
+    }
+    .navigation {
+        float: left;
+        width: 40%;
+        a {
+            background: $dark;
+            text-transform: uppercase;
+            color: white;
+            display: inline-block;
+            padding: 5px 12px;
+            border: 1px solid white;
+            border-radius: 2px;
+            margin-top: 4px;
+        }
+    }
+    .social-wrapper {
+        float: left;
+        width: 60%;
+        .social {
+          text-align:right;
+          margin: 0;
+          margin-top: 5px;
+        }
+        li {
+            display: inline-block;
+            margin-right: 4px;
+            a {
+                background: $dark;
+                color: white;
+                border: 1px solid white;
+                height: 35px;
+                width: 35px;
+                display: block;
+                text-align: center;
+                border-radius: 50%;
+                i {
+                    vertical-align: middle;
+                    line-height: 33px;
+                }
+            }
+        }
     }
 }
 
@@ -336,4 +379,10 @@ input:focus ~ label, input:not(:placeholder-shown) ~ label {
      width: calc(100% - 30px);
      
      
+ }
+
+ footer {
+    height: 45px;
+    color: white; 
+    background-color:$color2;
  }

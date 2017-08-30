@@ -8,6 +8,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./assets/stylesheets/screen.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -42,7 +43,7 @@
 
         <div class="bottom-line  centerWrapper">
             <div class="verticalCenter uno center">
-                    <span class="color1 uno go-down" go-down  data-text='next section'>next section</span>  
+                <span class="color1 uno go-down" go-down data-text='next section'>next section</span>
             </div>
         </div>
     </section>
@@ -118,22 +119,42 @@
 
         <div class="bottom-line centerWrapper  color2-bg">
             <div class="verticalCenter dos  center">
-                    <span class="color1 go-down dos" go-down ng-click="goNext()" data-text='next section'>next section</span>  
+                <span class="color1 go-down dos" go-down ng-click="goNext()" data-text='next section'>next section</span>
             </div>
         </div>
-        <div class="section-nav center" section-nav ng-controller="NavController as Ctrl" >
-                <div class="navigation">
-                     <a ng-href="/#!/" ng-show="Ctrl.$location.path() != '/'">go back to the gallery</a>
-                     <a ng-href="/#!/contact" ng-show="Ctrl.$location.path() != '/contact'">click to contact me</a>
-                </div>
+        <div class="section-nav center" section-nav ng-controller="NavController as Ctrl">
+         <div class="container">
+                <div class="navigation ">
+                        <a ng-href="/#!/" ng-show="Ctrl.$location.path() != '/'">back to gallery</a>
+                        <a ng-href="/#!/contact" ng-show="Ctrl.$location.path() != '/contact'">contact</a>
+                    </div>
+        
+                    <div class="social-wrapper">
+                        <ul class="social">
+                            <li><a href="http://google.com"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="http://google.com"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://google.com"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://google.com"><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+        
+         </div>
+           
+
         </div>
     </section>
 
     <div ng-view> </div>
 
-   <footer style="height: 45px;color: white; background-color: blue;">
+    <footer >
+        <div class="container">
+                <div class="row">
+                        <div class="left col-md-6">Copyright</div>
+                        <div class="right col-md-6">Carlos</div>
+                </div>
+        </div>
      
-   </footer>
+    </footer>
 </body>
 
 </html>
