@@ -10745,7 +10745,7 @@ section.blocks {
 .section-nav.active {
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 99;
 }
 /* line 285, ../sass/styles/_main.scss */
 .section-nav .navigation {

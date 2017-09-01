@@ -280,7 +280,7 @@ $provissionalColor: #1eaba0;
     &.active {
         position: fixed;
         top: 0;
-        z-index: 2;
+        z-index: 99;
     }
     .navigation {
         float: left;
