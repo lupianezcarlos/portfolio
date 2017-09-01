@@ -4,28 +4,33 @@ var express = require('express'),
     sharp = require('sharp'),
     app = express(),
     path = require('path'),
+    fs = require('fs'),
     bodyParser = require('body-parser');
     require('./config.js');
 
-var imgPath = path.join(__dirname, '../images')
+var imgsPath = path.join(__dirname, '../images')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, '../app')));
-app.use('/img',express.static(imgPath));
+app.use('/img',express.static(imgsPath));
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../app/index.html'))
 });
 
+//resize images
 
-sharp(imgPath + '/moss13.jpg')
-    .resize(190, 190)
-    .toFile(__dirname+'/../images/moss13.jpg', function(err) {
-        console.log(err)
-    // output.jpg is a 200 pixels wide and 200 pixels high image
-    // containing a scaled and cropped version of input.jpg
-});
+// fs.readdirSync(imgsPath).forEach(file => {
+//     sharp(imgsPath + '/' + file)
+//     .resize(800, 800)
+//     .toFile(__dirname+'/../images/gal/'+file, function(err) {
+//        if(err)  console.log(err)
+//      });
+
+// })
+
+
 
 app.get('/carlos', function (req, res) {
     res.json({ name: 'al' })
@@ -39,9 +44,9 @@ app.get('/gallery', function (req, res) {
     var gallery = _.map(titles, title => ({
         item: title,
         images: [
-            {src:'/img/moss1.jpg'},
-            {src:'/img/moss2.jpg'},
-            {src:'/img/moss3.jpg'}
+            {src:'/img/gal/moss1.jpg'},
+            {src:'/img/gal/moss2.jpg'},
+            {src:'/img/gal/moss3.jpg'}
         ]
 
     }));
