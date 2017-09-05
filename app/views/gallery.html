@@ -16,13 +16,17 @@
              <slide>
 
             <div class="cube" 
-            ng-class="{'flip':active}"  
+            
            >
-                
+           <!-- ng-class="{'flip':active}"   -->
                        <div class="caption">
-                            <div class="middle"  ng-click="active=!active ">
-                               view
-                            </div>
+                           <div class="content" ng-class="{'in-view':active}">
+                               hello people
+                               <div class="view-button"  ng-click="active=!active ">
+                                    view
+                                 </div>
+                           </div>
+                           
                        </div>
                        <div class="gal-img {{$index}}" ng-repeat="image in gallery.images track by $index" >
                             <img  class="img-fluid"   
