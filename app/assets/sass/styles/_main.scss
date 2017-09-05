@@ -165,6 +165,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
    
     
 }
+.showed .gal-img {
+    opacity: .3 !important;
+}
 // .gal-item .cube:hover .caption .view-button  {
 //     opacity: 1;
 //     position: relative;

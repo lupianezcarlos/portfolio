@@ -14,15 +14,14 @@
     <div class="col-lg-4 gal-item col-6" ng-repeat="gallery in galleryCrtl.galleryData">
         <cube-style>
              <slide>
-
-            <div class="cube">
+            <div class="cube" ng-class="{'showed':showed}" ng-init="showed=false">
            <!-- ng-class="{'flip':active}"   -->
-                       <div class="caption">
+                       <div class="caption" >
                            <div class="content" ng-class="{'in-view':active}">
-                               hello people
+                              {{gallery.description}}
                                <div class="view-button" 
                                ng-init="view=false;" 
-                               ng-click="active=!active;view=!view">
+                               ng-click="active=!active;view=!view;showed=!showed">
                                     {{view ? 'hide': 'view'}}
                                  </div>
                            </div>

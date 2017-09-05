@@ -7,6 +7,7 @@ var express = require('express'),
     fs = require('fs'),
     bodyParser = require('body-parser');
     require('./config.js');
+    var models = require('./models.js')
 
 var imgsPath = path.join(__dirname, '../images')
 
@@ -30,15 +31,37 @@ app.get('/', function (req, res) {
 
 // })
 
+var websModels = models.websitesModel;
+
+var imgs = [
+    {src:'/img/gal/moss1.jpg'},
+    {src:'/img/gal/moss2.jpg'},
+    {src:'/img/gal/moss3.jpg'}
+];
 
 
-app.get('/carlos', function (req, res) {
-    res.json({ name: 'al' })
+websModels.collection.drop();
+
+var web1 = new websModels({
+    images: imgs,
+    title: "first title",
+    description: 'Hello there'
+ })
+
+
+ web1.save(function(err) {
+    if(err) console.log(err)
+ }) 
+
+app.get('/website/create', function (req, res) {
+     req.body.data
 });
 
+app.get('/website/delete',function(){
+
+})
+
 app.get('/gallery', function (req, res) {
-
-
     var titles = utils.getString(9);
 
     var gallery = _.map(titles, title => ({
@@ -47,11 +70,10 @@ app.get('/gallery', function (req, res) {
             {src:'/img/gal/moss1.jpg'},
             {src:'/img/gal/moss2.jpg'},
             {src:'/img/gal/moss3.jpg'}
-        ]
+        ],
+        description: 'Take a look at our website and let me know what do you think'
 
     }));
-
-    
     res.send(gallery)
 });
 
