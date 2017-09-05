@@ -10581,8 +10581,8 @@ section.blocks {
   color: white;
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
-  border-left: 1px solid white;
-  border-top: 1px solid white;
+  border-left: 1px solid #00bff3;
+  border-top: 1px solid #00bff3;
   line-height: 29px;
   color: #00bff3;
 }

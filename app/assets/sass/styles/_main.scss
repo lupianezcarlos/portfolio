@@ -149,8 +149,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     color: white;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
-    border-left: 1px solid white;
-    border-top: 1px solid white;
+    border-left: 1px solid $color1;
+    border-top: 1px solid $color1;
     line-height: 29px;
     color: $color1;
 }
