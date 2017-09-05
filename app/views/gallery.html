@@ -15,33 +15,30 @@
         <cube-style>
              <slide>
 
-            <div class="cube" 
-            
-           >
+            <div class="cube">
            <!-- ng-class="{'flip':active}"   -->
                        <div class="caption">
                            <div class="content" ng-class="{'in-view':active}">
                                hello people
-                               <div class="view-button"  ng-click="active=!active ">
-                                    view
+                               <div class="view-button" 
+                               ng-init="view=false;" 
+                               ng-click="active=!active;view=!view">
+                                    {{view ? 'hide': 'view'}}
                                  </div>
                            </div>
-                           
                        </div>
                        <div class="gal-img {{$index}}" ng-repeat="image in gallery.images track by $index" >
                             <img  class="img-fluid"   
                             ng-src="{{image.src}}" 
                             ng-show="image.visible"> 
                        </div>
-                       <div class="dots"  >
+                       <div class="dots">
                             <span class="dot" 
-                            ng-repeat="dot in gallery.images track by $index" 
-                            data-dot-tracking={{$index}} 
-                            ng-click="start($index)"></span>
+                                ng-repeat="dot in gallery.images track by $index" 
+                                data-dot-tracking={{$index}} 
+                                ng-click="start($index)">
+                            </span>
                         </div>
-                       <div class="gal-img-back">
-                           fasdfasdf
-                       </div>
             </div>
                      </slide>
         </cube-style>
