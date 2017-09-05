@@ -16,17 +16,23 @@
              <slide>
 
             <div class="cube" ng-class="{'flip':active}"  ng-click="active=!active " ng-mouseover="start()" ng-mouseleave="reset()">
-               
-                   
-                      <div class="gal-img" ng-repeat="image in gallery.images track by $index"  ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+                
+                       <div class="caption">
+                            <div class="middle">
+                                Click here to get more info!
+                            </div>
+                       </div>
+                       <div class="gal-img" ng-repeat="image in gallery.images track by $index" data-img-tracking={{$index}}>
                             <img  class="img-fluid"   
                             ng-src="{{image.src}}" 
                             ng-show="image.visible"> 
                        </div>
+                       <div class="dots"  >
+                            <span class="dot" ng-repeat="dot in gallery.images track by $index" data-dot-tracking={{$index}} ></span>
+                        </div>
                        <div class="gal-img-back">
                            fasdfasdf
                        </div>
-               
             </div>
                      </slide>
         </cube-style>

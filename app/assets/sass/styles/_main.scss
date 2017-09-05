@@ -134,16 +134,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
 .bolder {
     font-weight: 900;
 }
+.caption {
+    @include transition(all .4s);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: rgba(255, 255,255,0.5);
+}
+.dots {
+    position: absolute;
+    bottom: 10px;
+    z-index: 999;
+    width: 100%;
+    text-align: center; 
+    .dot {
+        display: inline-block;
+        border-radius: 50%;
+        height: 14px;
+        width: 14px;
+        margin: 0 4px;
+        background: gray;
+        border: 1px solid white;
+        cursor: pointer;
+        &:hover {
+            background-color: greenyellow
+        }
+    }
+}
+.gal-item .cube:hover .caption {
+    opacity: 1
+}
 .bannerTitle {
     color: #d0eff7;
     text-align: right;
     font-weight: normal;
     span {
         color: #ffffff;
-        text-shadow: 1px 1px 4px black;
+        // text-shadow: 1px 1px 4px black;
         font-size: 40px;
-        background: #616586;
-        line-height: 1.2;
+        // background: #616586;
+        // line-height: 1.2;
         box-shadow: 1px 1px 1px black;
         padding: 0 10px;
     }
@@ -234,6 +266,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         perspective: 1000;
 
         .cube {
+            position: relative;
             background-color: transparent;
             overflow: visible;
             .gal-img {
@@ -278,9 +311,17 @@ $provissionalColor: #1eaba0;
     z-index: 0;
     height: 50px;
     &.active {
-        position: fixed;
+        // position: fixed;
         top: 0;
+        bottom: auto;
         z-index: 99;
+        .container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: blue;
+            z-index: 99;
+        }
     }
     .navigation {
         float: left;

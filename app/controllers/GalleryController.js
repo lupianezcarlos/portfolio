@@ -6,5 +6,6 @@
             $http.get('/gallery').then(function (res) {
                 $this.galleryData = res.data;
             })
+        
         })
 })()

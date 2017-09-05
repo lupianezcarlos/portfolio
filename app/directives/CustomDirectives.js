@@ -56,7 +56,7 @@ angular.module('CustomDirectives', [])
                 else   scope.current++;
                     },1000)
                  }
-             
+                 
             scope.reset = function() {
                 $timeout.cancel(timer)
             }
