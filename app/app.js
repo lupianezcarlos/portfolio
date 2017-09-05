@@ -3,8 +3,8 @@ angular.module('Myapp',[
   'IndexController',
   'GalleryController',
   'GeneralControllers',
-  'CustomDirectives',
-  'ngAnimate'
+  'CustomDirectives'
+  // 'ngAnimate'
 ])
    
 .config(function($routeProvider, $locationProvider) {
