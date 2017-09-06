@@ -22,7 +22,7 @@ angular.module('Myapp',[
     // ,
     // controller: "ContactCtrl"
   })
-  .when('/websites/create',{
-    templateUrl: './views/create.html'
-  })
+  // .when('/websites/create',{
+  //   templateUrl: './views/create.html'
+  // })
 });

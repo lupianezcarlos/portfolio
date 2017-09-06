@@ -18,7 +18,8 @@
            <!-- ng-class="{'flip':active}"   -->
                        <div class="caption" >
                            <div class="content" ng-class="{'in-view':active}">
-                              {{gallery.description}}
+                              <p class="desc">{{gallery.description}}</p>
+                              <a  class="site-button"  href="{{gallery.link}}" target="_blank">{{gallery.name}}</a>
                                <div class="view-button" 
                                ng-init="view=false;" 
                                ng-click="active=!active;view=!view;showed=!showed">
@@ -45,5 +46,6 @@
 
 </div>
 </div>
+
 
 </section>

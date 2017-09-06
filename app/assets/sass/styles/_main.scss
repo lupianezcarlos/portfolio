@@ -145,8 +145,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         @include transition(all .4s);   
         @include transform(translateY(-100%));
         background: white;
+       
         &.in-view {
             @include transform(translateY(0));
+        }
+        .desc {
+            color: $dark;
+            padding: 20px;
+            margin-bottom: 0;
         }
     }
     .view-button {
@@ -161,6 +167,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         // top: -30px;
         background-color: #23353a;
         color: white;
+        &:hover {
+            color: $color1;
+        }
     }
    
     
@@ -286,7 +295,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
         @include transform(rotate(-45deg)) 
     }
 }
-
+.site-button {
+    @include transition(all .4s);
+    display: inline-block;
+    padding: 5px 12px; 
+    background-color: #23353a;
+    color: white;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    text-decoration: none !important;
+    &:hover {
+        border: 1px solid #23353a;
+        color: #23353a;
+        background-color: transparent
+    }
+}
 .gal-item   {
         -webkit-perspective: 1000;
         -moz-perspective: 1000;
