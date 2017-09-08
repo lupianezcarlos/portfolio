@@ -1,0 +1,95 @@
+<section class="blocks">
+        <div class="rombs-container">
+            <div class="romb"></div>
+            <div class="romb"></div>
+            <div class="romb"></div>
+        </div>
+        <div class="overlay"></div>
+
+
+
+        <div class="container centered-wrapper">
+            <div class="centered">
+                <blocks>
+                    <cube-style>
+
+
+                        <div class="row row1">
+                            <div class="col-md-6  col-lg-4">
+                                <div class="inner ">
+                                    <div class="textbox">
+                                        <div class="title"> Lorem ipsum dolor </div>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                    </div>
+                                    <div class="cube"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6  col-lg-4 middle">
+                                <div class="inner">
+                                    <div class="textbox">
+                                        <div class="title"> Lorem ipsum dolor </div>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                    </div>
+                                    <div class="cube"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <div class="inner">
+                                    <div class="cube hidden-md-down"></div>
+                                    <div class="row">
+                                        <div class="textbox col-md-6 col-lg-12">
+                                            <div class="title"> Lorem ipsum dolor </div>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="cube hidden-lg-up"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </cube-style>
+                </blocks>
+            </div>
+
+        </div>
+
+        <div class="bottom-line centerWrapper  color2-bg">
+            <div class="verticalCenter dos  center">
+                <span class="color1 go-down dos" go-down ng-click="goNext()" data-text='next section'>next section</span>
+            </div>
+        </div>
+        <div class="section-nav center" section-nav ng-controller="NavController as Ctrl">
+         <div class="container">
+                <div class="navigation ">
+                        <a ui-sref=".gallery" ng-show="Ctrl.$location.path() != '/'" ui-sref-active="active">back to gallery</a>
+                        <a ui-sref=".contact" ng-show="Ctrl.$location.path() != '//contact'" ui-sref-active="active">contact</a>
+                    </div>
+        
+                    <div class="social-wrapper">
+                        <ul class="social">
+                            <li><a href="http://google.com"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="http://google.com"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://google.com"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://google.com"><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+        
+         </div>
+           
+
+        </div>
+    </section>

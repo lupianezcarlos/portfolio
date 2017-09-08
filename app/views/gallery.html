@@ -9,9 +9,9 @@
     </div>
     <div class="container">
           
-<div class="row galrow" ng-controller="GalCtrl as galleryCrtl">
+<div class="row galrow">
 
-    <div class="col-lg-4 gal-item col-6" ng-repeat="gallery in galleryCrtl.galleryData">
+    <div class="col-lg-4 gal-item col-6" ng-repeat="gallery in $ctrl.galleryData">
         <cube-style>
              <slide>
             <div class="cube" ng-class="{'showed':showed}" ng-init="showed=false">
