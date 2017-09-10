@@ -5,19 +5,38 @@ var express = require('express'),
     app = express(),
     path = require('path'),
     fs = require('fs'),
+    cors = require('cors'),
     bodyParser = require('body-parser');
     require('./config.js');
     var models = require('./models.js')
 
-var imgsPath = path.join(__dirname, '../images')
+var imgsPath   = path.join(__dirname, '../images');
+var uploadPath = path.join(__dirname,'../uploads');
 
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, '../app')));
 app.use('/img',express.static(imgsPath));
+app.use('/uploads',express.static(uploadPath));
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../app/index.html'))
+});
+
+
+var multer = require('multer');
+var upload = multer({
+    dest: __dirname + '/../app/uploads/',
+});
+
+// app.get('/upload',function(req,res) {
+//     res.send(res.body)
+// })
+
+app.post('/uploads', upload.array(), function (req, res, next) {
+    console.log('hello upload');
+    return res.ok();
 });
 
 //resize images
@@ -35,11 +54,55 @@ app.get('/', function (req, res) {
 
 var websModels = models.websitesModel;
 
-var imgs = [
-    {src:'/img/gal/moss1.jpg'},
-    {src:'/img/gal/moss2.jpg'},
-    {src:'/img/gal/moss3.jpg'}
-];
+var imgs = {
+    0:[
+        {src:'/img/gal/strata1.JPG'},
+        {src:'/img/gal/strata2.JPG'},
+        {src:'/img/gal/strata3.JPG'}
+    ],
+    1:[
+        {src:'/img/gal/infinity1.JPG'},
+        {src:'/img/gal/infinity2.JPG'},
+        {src:'/img/gal/infinity3.JPG'}
+    ],
+    2:[
+        {src:'/img/gal/tapestry1.JPG'},
+        {src:'/img/gal/tapestry2.JPG'},
+        {src:'/img/gal/tapestry3.JPG'}
+    ],
+    3:[
+        {src:'/img/gal/moss1.jpg'},
+        {src:'/img/gal/moss2.jpg'},
+        {src:'/img/gal/moss3.jpg'}
+    ],
+    4:[
+        {src:'/img/gal/verve1.JPG'},
+        {src:'/img/gal/verve2.JPG'},
+        {src:'/img/gal/verve3.JPG'}
+    ],
+    5:[
+        {src:'/img/gal/block431.JPG'},
+        {src:'/img/gal/block432.JPG'},
+        {src:'/img/gal/block433.JPG'}
+    ],
+    6:[
+        {src:'/img/gal/juanes1.JPG'},
+        {src:'/img/gal/juanes2.JPG'}
+    ],
+    7:[
+        {src:'/img/gal/dallas1.JPG'},
+        {src:'/img/gal/dallas2.JPG'},
+        {src:'/img/gal/dallas3.JPG'}
+    ],
+    8:[
+        {src:'/img/gal/evian1.JPG'},
+        {src:'/img/gal/evian2.JPG'},
+        {src:'/img/gal/evian3.JPG'}
+    ]
+       
+    
+   
+};
 
 
 websModels.collection.drop();
@@ -83,11 +146,7 @@ app.get('/gallery', function (req, res) {
     ]
     var gallery = _.map(titles, (title,index) => ({
         item: title,
-        images: [
-            {src:'/img/gal/moss1.jpg'},
-            {src:'/img/gal/moss2.jpg'},
-            {src:'/img/gal/moss3.jpg'}
-        ],
+        images: imgs[index],
         name: names[index],
         link:lks[index],
         description: 'Website description!'

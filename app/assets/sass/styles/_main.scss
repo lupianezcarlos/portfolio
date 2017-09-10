@@ -275,12 +275,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
 }
 
 .galrow  {
-    padding-top: 60px;
+    padding-top: 20px;
     padding-bottom: 60px;
     .col-lg-4{
     margin-bottom:15px;
     margin-top:15px;
+  }
+  
 }
+gallery h2 {
+    margin-top: 40px;
 }
 
     .line  {
@@ -480,6 +484,9 @@ input:focus ~ label, input:not(:placeholder-shown) ~ label {
  }
 
  footer {
+    color:#2f4f4f !important;
+    font-size: 12px;
+    line-height: 45px;
     height: 45px;
     color: white; 
     background-color:$color2;

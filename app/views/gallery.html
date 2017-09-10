@@ -8,10 +8,10 @@
 
     </div>
     <div class="container">
-          
+          <h2>Portfolio</h2>
 <div class="row galrow">
-
-    <div class="col-lg-4 gal-item col-6" ng-repeat="gallery in $ctrl.galleryData">
+ 
+    <div class="col-lg-4 gal-item  col-sm-6  col-12 " ng-repeat="gallery in $ctrl.galleryData">
         <cube-style>
              <slide>
             <div class="cube" ng-class="{'showed':showed}" ng-init="showed=false">
@@ -21,8 +21,8 @@
                               <p class="desc">{{gallery.description}}</p>
                               <a  class="site-button"  href="{{gallery.link}}" target="_blank">{{gallery.name}}</a>
                                <div class="view-button" 
-                               ng-init="view=false;" 
-                               ng-click="active=!active;view=!view;showed=!showed">
+                                    ng-init="view=false;" 
+                                    ng-click="active=!active;view=!view;showed=!showed">
                                     {{view ? 'hide': 'view'}}
                                  </div>
                            </div>
