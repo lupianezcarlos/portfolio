@@ -91,26 +91,9 @@ var web1 = new websModels({
 
 
 
-app.get('/website/create', function (req, res) {
-     req.body.data;
-});
-
-app.get('/website/delete',function(){
-
-});
 
 
-
-app.get('/login',function(req,res) {
-    res.send(req.body)
-});
-
-
-
-
-
-
-// console.log(process.env)
+// Routes 
 app.use('/required',apiRoutes.apiAuth);
 app.use(apiRoutes.apiOpen);
 const port = process.env.PORT;

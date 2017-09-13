@@ -10,31 +10,26 @@ var express = require('express'),
  
 
     auth.init = (req, res, next) => {
-        new Promise(function(resolve, reject    ) {
-            resolve(req.user = 'carlos');
-        })
-        
+        req.user = 'carlos';
+        next();
 
      }
- 
-
-
-    //  app.use(auth.init); 
-
      auth.canAccess = (req, res, next) => {
-        req.user =  'carlos';
-        if (req.user === 'carlos') {
-            console.log('logged!')
-            next();
-        } else {
-            console.log('come on!')
-        }
         
-    };
-    
+          if (req.user === 'carlos') {
+              console.log('logged!')
+              next();
+          } else {
+              console.log('come on!')
+          }
+          
+      };
+
+
    
 
-    //private routes
+    //Private routes
+    authRoute.use(auth.init); 
     authRoute.use(auth.canAccess);
 
     authRoute.get('/required',function(req,res) {
@@ -42,9 +37,22 @@ var express = require('express'),
    });
 
 
-    //opened routes
+    authRoute.get('/website/create', function (req, res) {
+        req.body.data;
+    });
+
+    authRoute.get('/website/delete',function(){ 
+
+    });
+
+
+    //Open routes
     openRoute.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, '../app/index.html'))
+    });
+
+    openRoute.get('/login',function(req,res) {
+        res.send(req.body)
     });
 
     openRoute.get('/gallery', function (req, res) {
