@@ -5,10 +5,10 @@ var authentication= {};
 
 authentication.login = function(app,isAuthenticated){
     isAuthenticated = false || isAuthenticated;
-    app.get('/auth',function(req, res) {
-         console.log('login post')
-        var user = req.body.data;
-        res.send(user)
+    app.post('/auth',function(req, res) {
+        
+        var user = req.body;
+        
         if(isEmail(user.email)) {
             res.send(user)
         }

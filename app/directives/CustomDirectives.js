@@ -51,12 +51,7 @@ angular.module('CustomDirectives', [])
           var timer;
 
           scope.start =  function (index) {
-
-            // timer =  $timeout(function() {
-            //     if(scope.current ===  scope.gallery.images.length - 1) {scope.current = 0}
-            //     else   scope.current++;
-            //         },1000)\
-
+         
                     scope.index = index;
                     if(element.find('.gal-img').hasClass(index)) {
                         scope.gallery.images[index].visible = true;
