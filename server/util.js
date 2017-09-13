@@ -23,5 +23,15 @@ module.exports.utils = {
         
         return arr;
 
+    },
+
+    isEmail:function(input){
+        var regex = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+        if(regex.test(input)) { 
+            return true;
+        } 
+        else 
+            return false;
     }
+
 }

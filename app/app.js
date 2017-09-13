@@ -8,7 +8,8 @@ angular.module('Myapp',[
   'ui.router',
   'GalleryComponent',
   'angularFileUpload',
-  'CrudModule'
+  'CrudModule',
+  'AuthModule'
 ])
    
 .config(function(
@@ -16,6 +17,7 @@ angular.module('Myapp',[
   $locationProvider,
    $stateProvider
   ) {
+   
   $stateProvider.state('base',{
     abstract: true,
     url:'/',
@@ -35,10 +37,18 @@ angular.module('Myapp',[
     templateUrl:'./views/contact.html',
   });
 
+  $stateProvider.state({
+    name:'login',
+    url:'/auth',
+    controller:'LoginController',
+    templateUrl:'./views/auth/login.html',
+  });
 
   $stateProvider.state({
     name:'create',
     url:'/website/create',
     templateUrl:'./views/create.html',
   })
+
+  $locationProvider.html5Mode({enabled:true});
 });

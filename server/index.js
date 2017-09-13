@@ -20,6 +20,10 @@ app.use('/', express.static(path.join(__dirname, '../app')));
 app.use('/img',express.static(imgsPath));
 app.use('/uploads',express.static(uploadPath));
 
+var auth = require('./auth/index').auth;
+
+auth.login(app,false);
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../app/index.html'))
 });
@@ -124,6 +128,14 @@ app.get('/website/create', function (req, res) {
 app.get('/website/delete',function(){
 
 });
+
+
+
+app.get('/login',function(req,res) {
+    res.send(req.body)
+});
+
+
 
 app.get('/gallery', function (req, res) {
     var titles = utils.getString(9);
