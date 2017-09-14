@@ -61,7 +61,8 @@ data.lks = [
     'http://dev-evian-splash-page.razzdev.io/',
     // 'http://www.pastificiocarbone.it/',
     // 'http://dev-alta-camelback-main.razzdev.io/'
-]
+];
+
 data.names  = [
     'strata','infinity','tapestry','moss company','verver','block43','juanes','dallas splash','evian splash'
 ]; 
@@ -73,7 +74,6 @@ data.gallery =   _.map(titles, (title,index) => ({
      name: data.names[index],
      link:data.lks[index],
      description: 'Website description!'
-
  }));
 
 

@@ -13,18 +13,18 @@ var express = require('express'),
     });
 
     var auth = {};
-    
+
     auth.init = (req, res, next) => {
         req.user = 'carlos';
         next();
      }
 
      auth.canAccess = (req, res, next) => {
-          if (req.user === 'carlos') {
+          if (req.user === 'arlos') {
               console.log('logged!')
-              next();
+              res.redirect('/')
           } else {
-              console.log('come on!')
+              res.redirect('/login')
           }
       };
 
