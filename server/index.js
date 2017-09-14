@@ -15,6 +15,7 @@ var express = require('express'),
 var imgsPath   = path.join(__dirname, '../images');
 var uploadPath = path.join(__dirname,'../uploads');
 
+//middlewares
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,44 +23,12 @@ app.use('/', express.static(path.join(__dirname, '../app')));
 app.use('/img',express.static(imgsPath));
 app.use('/uploads',express.static(uploadPath));
 
+//authentication
 var auth = require('./auth/index').auth;
-
 auth.login(app,false);
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../app/index.html'))
-});
-app.get('/gallery', function (req, res) {
-    var titles = utils.getString(9);
-   
-    
-    var gallery = _.map(titles, (title,index) => ({
-        item: title,
-        images: imgs[index],
-        name: data.names[index],
-        link:data.lks[index],
-        description: 'Website description!'
-
-    }));
-    
-    res.send(gallery)
-});
-var multer = require('multer');
-var upload = multer({
-    dest: __dirname + '/../app/uploads/',
-});
-
-// app.get('/upload',function(req,res) {
-//     res.send(res.body)
-// })
-
-app.post('/uploads', upload.array(), function (req, res, next) {
-    console.log('hello upload');
-    return res.ok();
-});
 
 //resize images
-
 // fs.readdirSync(imgsPath).forEach(file => {
 //     sharp(imgsPath + '/' + file)
 //     .resize(800, 800)
@@ -83,21 +52,18 @@ var web1 = new websModels({
     images: imgs,
     title: "first title",
     description: 'Hello there'
- })
+ });
 
  web1.save(function(err) {
     if(err) console.log(err)
  }); 
 
-
-
-
-
 // Routes 
 app.use('/required',apiRoutes.apiAuth);
 app.use(apiRoutes.apiOpen);
-const port = process.env.PORT;
 
+
+const port = process.env.PORT;
 app.listen(port, function () {
     console.log('Server listening on port ' + this.address().port);
 })

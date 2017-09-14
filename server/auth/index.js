@@ -8,10 +8,11 @@ authentication.login = function(app,isAuthenticated){
     app.post('/auth',function(req, res) {
         
         var user = req.body;
-        
+
         if(isEmail(user.email)) {
             res.send(user)
         }
+        
     });
 }
 

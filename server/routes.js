@@ -4,29 +4,30 @@ var express = require('express'),
     authRoute = express.Router(),
     utils     = require('./util').utils,
     data = require('./data'),
-    _ = require('underscore');
+    multer = require('multer');
     
-    var auth = {};
  
+    var multer = require('multer');
+    var upload = multer({
+        dest: __dirname + '/../app/uploads/',
+    });
 
+    var auth = {};
+    
     auth.init = (req, res, next) => {
         req.user = 'carlos';
         next();
-
      }
+
      auth.canAccess = (req, res, next) => {
-        
           if (req.user === 'carlos') {
               console.log('logged!')
               next();
           } else {
               console.log('come on!')
           }
-          
       };
 
-
-   
 
     //Private routes
     authRoute.use(auth.init); 
@@ -44,7 +45,11 @@ var express = require('express'),
     authRoute.get('/website/delete',function(){ 
 
     });
-
+    
+    authRoute.post('/uploads', upload.array(), function (req, res, next) {
+        console.log('hello upload');
+        return res.ok();
+    });
 
     //Open routes
     openRoute.get('/', function (req, res) {
@@ -56,21 +61,18 @@ var express = require('express'),
     });
 
     openRoute.get('/gallery', function (req, res) {
-        var titles = utils.getString(9);
-       
-        var gallery = _.map(titles, (title,index) => ({
-            item: title,
-            images: data.imgs[index],
-            name: data.names[index],
-            link:data.lks[index],
-            description: 'Website description!'
-    
-        }));
-        
-        res.send(gallery)
+         res.send(data.gallery)
     });
 
 
+    app.post('/uploads', upload.array(), function (req, res, next) {
+        console.log('hello upload');
+        return res.ok();
+    });
+    
+// app.get('/upload',function(req,res) {
+//     res.send(res.body)
+// })
 
 module.exports.apiOpen = openRoute;
 module.exports.apiAuth = authRoute;    

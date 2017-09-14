@@ -1,5 +1,6 @@
 
 var data = {};
+var _ = require('underscore');
 
 data.imgs = {
     0:[
@@ -61,9 +62,19 @@ data.lks = [
     // 'http://www.pastificiocarbone.it/',
     // 'http://dev-alta-camelback-main.razzdev.io/'
 ]
-
 data.names  = [
     'strata','infinity','tapestry','moss company','verver','block43','juanes','dallas splash','evian splash'
 ]; 
+
+var titles = utils.getString(9);
+data.gallery =   _.map(titles, (title,index) => ({
+     item: title,
+     images: data.imgs[index],
+     name: data.names[index],
+     link:data.lks[index],
+     description: 'Website description!'
+
+ }));
+
 
 module.exports = data;
