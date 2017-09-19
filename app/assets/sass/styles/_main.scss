@@ -277,6 +277,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     }
 }
 
+.animate {
+    opacity: 0;
+}
+
+@for $i from 1 to 12  {
+    $sec: .2 * $i;
+    .a-#{$i} {
+        @include transition-delay(#{$sec}s)
+    }
+}
+
 .galrow  {
     padding-top: 20px;
     padding-bottom: 60px;
@@ -286,6 +297,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
   }
   
 }
+
+
 gallery h2 {
     margin-top: 40px;
     color: #0275d8;
