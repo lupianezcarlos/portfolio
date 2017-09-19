@@ -277,9 +277,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     }
 }
 
-.animate {
+.fromRight {
+   visibility: hidden;
+   div[class^="a-"], li[class^="a-"]{
+       @include transition-property(all);
+       @include transition-duration(0.4s);
+       @include transform(translate3d(100%, 0,0));
     opacity: 0;
+   }
+
 }
+
+.active .fromRight {
+    visibility: visible;
+    div[class^="a-"], li[class^="a-"]{
+        @include transform(translate3d(0, 0,0));
+        opacity: 1;
+    }
+}
+
 
 @for $i from 1 to 12  {
     $sec: .2 * $i;
