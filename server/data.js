@@ -49,6 +49,7 @@ data.imgs = {
     ]
        
 };
+
 data.lks = [
     'http://dev-strata.razzdev.io/',
     'http://www.infinitywestshore.com/',
