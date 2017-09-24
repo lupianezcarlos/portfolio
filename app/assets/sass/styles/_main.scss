@@ -280,7 +280,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
 .fromRight {
    visibility: hidden;
    div[class^="a-"], li[class^="a-"]{
-       @include transition-property(all);
+       @include transition-property(none);
        @include transition-duration(0.4s);
        @include transform(translate3d(100%, 0,0));
     opacity: 0;
@@ -291,11 +291,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
 .active .fromRight {
     visibility: visible;
     div[class^="a-"], li[class^="a-"]{
+        @include transition-property(all);
         @include transform(translate3d(0, 0,0));
         opacity: 1;
     }
 }
-
 
 @for $i from 1 to 12  {
     $sec: .2 * $i;
@@ -390,6 +390,10 @@ gallery h2 {
 
 }
 $provissionalColor: #1eaba0;
+.contact-title {
+    color: #54585a;
+    text-align: center
+}
 .section-nav {
     padding-top: 4px;
     @include transition(all .4s);
@@ -414,11 +418,12 @@ $provissionalColor: #1eaba0;
             z-index: 99;
         }
     }
+   
     .navigation {
         float: left;
         width: 40%;
         a {
-            background: $dark;
+            background: #0084bf;
             text-transform: uppercase;
             color: white;
             display: inline-block;
@@ -440,14 +445,14 @@ $provissionalColor: #1eaba0;
             display: inline-block;
             margin-right: 4px;
             a {
-                background: $dark;
+                background: #0084bf;
                 color: white;
                 border: 1px solid white;
                 height: 35px;
                 width: 35px;
                 display: block;
                 text-align: center;
-                border-radius: 50%;
+                border-radius: 6px;
                 i {
                     vertical-align: middle;
                     line-height: 33px;
