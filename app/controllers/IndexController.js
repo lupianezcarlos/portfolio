@@ -4,11 +4,13 @@
         .controller('IndexCtrl', function ($scope, $http) {
             $this = this;
 
-            $http.get('/calos').then(function (res) {
+            $http.get('/data').then(function (res) {
 
-                $this.name = res.data.ame;
+                $this.name = res.data;
+                console.log(data)
 
             })
+
 
         })
 })()

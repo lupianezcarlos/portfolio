@@ -68,6 +68,67 @@ data.names  = [
     'strata','infinity','tapestry','moss company','verver','block43','juanes','dallas splash','evian splash'
 ]; 
 
+data.skills = {
+  frontEnd: {
+    skill: {
+        name: 'Html5',
+        percent: '100%'
+    },
+       skill: {
+        name: 'Css3',
+        percent: '100%'
+    },
+    skill: {
+        name: 'Sass',
+        percent: '100%'
+    },
+    skill: {
+        name: 'Less',
+        percent: '100%'
+    }
+ },
+   backEnd: {
+    skill: {
+        name: 'Php',
+        percent: '100%'
+    },
+    skill: {
+        name: 'Laravel',
+        percent: '30%'
+    },
+    skill: {
+        name: 'NodeJs',
+        percent: '95%'
+    },
+    skill: {
+        name: 'Java',
+        percent: '35%'
+    },
+    skill: {
+        name: 'MySql',
+        percent: '90%'
+    },
+    skill: {
+        name: 'MongoDB',
+        percent: '95%'
+    }
+   },
+   fullStack: {
+    skill: {
+        name: 'NodeJs',
+        percent: '95%'
+    },
+    skill: {
+        name: 'AngularJs',
+        percent: '95%'
+    },
+    skill: {
+        name: 'React',
+        percent: '30%'
+    }
+   }
+};
+
 var titles = utils.getString(9);
 data.gallery =   _.map(titles, (title,index) => ({
      item: title,

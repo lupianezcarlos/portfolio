@@ -4,6 +4,7 @@ var express = require('express'),
     authRoute = express.Router(),
     utils     = require('./util').utils,
     data = require('./data'),
+    path = require('path'),
     multer = require('multer');
     
  
@@ -47,14 +48,20 @@ var express = require('express'),
     });
     
     authRoute.post('/uploads', upload.array(), function (req, res, next) {
-        console.log('hello upload');
         return res.ok();
     });
 
     //Open routes
     openRoute.get('/', function (req, res) {
-        res.sendFile(path.join(__dirname, '../app/index.html'))
+        console.log('hello'+data)
+        // res.send(data);
+        // res.sendFile(path.join(__dirname, '../app/index.html'))
     });
+
+    // openRoute.get('/',function(req,res) {
+    //     console.log(data)
+    //     res.json(data);
+    // });
 
     openRoute.get('/login',function(req,res) {
         res.send(req.body)
@@ -63,7 +70,6 @@ var express = require('express'),
     openRoute.get('/gallery', function (req, res) {
          res.send(data.gallery)
     });
-
 
     app.post('/uploads', upload.array(), function (req, res, next) {
         console.log('hello upload');

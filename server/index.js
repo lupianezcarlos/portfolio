@@ -19,7 +19,7 @@ var uploadPath = path.join(__dirname,'../uploads');
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', express.static(path.join(__dirname, '../app')));
+app.use(express.static(path.join(__dirname, '../app')));
 app.use('/img',express.static(imgsPath));
 app.use('/uploads',express.static(uploadPath));
 
@@ -60,7 +60,7 @@ var web1 = new websModels({
 
 // Routes 
 app.use('/required',apiRoutes.apiAuth);
-app.use(apiRoutes.apiOpen);
+app.use('/api',apiRoutes.apiOpen);
 
 
 const port = process.env.PORT;
