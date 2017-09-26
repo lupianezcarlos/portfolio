@@ -29,7 +29,7 @@ var auth = require('./auth/index').auth;
 auth.login(app,false);
 
 
-emailSender(config.emailConfig.user);
+emailSender(config.emailConfig, config.emailUser);
 
 //resize images
 // fs.readdirSync(imgsPath).forEach(file => {

@@ -3,35 +3,49 @@
     <div class=" verticalCenter">
         <div class="container">
                 <h2 class="contact-title">Let's get in touch!</h2>
-            <div class="row">
-                
-                <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="_name" aria-describedby="name" placeholder="Name">
-                    <label for="_name">Name</label>
-                    <div class="line"></div>
-                </div>
+                <form novalidate>
+                        <div class="row">
+                        
+                        <div class="form-group col-md-6">
+                            <input type="text" 
+                                   class="form-control" id="_name" 
+                                   aria-describedby="name" placeholder="Name" 
+                                   ng-model="user.name" required>
+                            <label for="_name">Name</label>
+                            <div class="line"></div>
+                        </div>
 
-                <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="_last" aria-describedby="lastname" placeholder="Lastname">
-                    <label for="_last">Lastname</label>
-                    <div class="line"></div>
-                </div>
-            </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" 
+                                   class="form-control" id="_last" 
+                                   aria-describedby="lastname" placeholder="Lastname"  
+                                   ng-model="user.lastname" required>
+                            <label for="_last">Lastname</label>
+                            <div class="line"></div>
+                        </div>
+                    </div>
 
-            <div class="row">
-                <div class="form-group col-md-12">
-                    <input type="email" class="form-control" id="_email" aria-describedby="email" placeholder="Email">
-                    <label for="_email">Email address</label>
-                    <div class="line"></div>
-                </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <input type="email" 
+                                   class="form-control" id="_email" 
+                                   aria-describedby="email" placeholder="Email"  
+                                   ng-model="user.email" required>
+                            <label for="_email">Email address</label>
+                            <div class="line"></div>
+                        </div>
 
-                <div class="form-group col-md-12">
-                    <input type="textarea" class="form-control" id="_message" aria-describedby="message" placeholder="Enter message!">
-                    <label for="_message">Message</label>
-                    <div class="line"></div>
+                        <div class="form-group col-md-12">
+                            <input type="textarea" 
+                                   class="form-control" id="_message" 
+                                   aria-describedby="message" placeholder="Enter message!"  
+                                   ng-model="user.message">
+                            <label for="_message">Message</label>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn color1" value="send"/>
+                </form>
                 </div>
-            </div>
-            <div class="btn color1">send</div>
-        </div>
     </div>
 </section>

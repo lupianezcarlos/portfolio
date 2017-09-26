@@ -1,25 +1,29 @@
+
 const nodemailer = require('nodemailer');
-
-
+const smtpTransport = require('nodemailer-smtp-transport');
     
-    var  sender =  (account) => {
+    var  sender =  (account, user) => {
         // create reusable transporter object using the default SMTP transport
-        let transporter = nodemailer.createTransport({
-            host: 'gmail',
-            // port: 587,
-            // secure: false, 
-            // true for 465, false for other ports
+        let transporter = nodemailer.createTransport(smtpTransport({
+            host: 'smtp.live.com',
+            port: 587,
+            secure: false, //use ssl
             auth: {
                 user: account.user, // generated ethereal user
                 pass: account.pass  // generated ethereal password
+            },
+            tls: {
+                // do not fail on invalid certs
+                rejectUnauthorized: false
             }
-        });
+        }));
     
         // setup email data with unicode symbols
         let mailOptions = {
-            from: '"Fred Foo 👻" <lupianez73@gmail.com>', // sender address
-            to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-            subject: 'Hello ✔', // Subject line
+            from: account.user, // sender address
+            replyTo: user.email,
+            to: account.user, // list of receivers
+            subject: user.subject, // Subject line
             text: 'Hello world?', // plain text body
             html: '<b>Hello world?</b>' // html body
         };
