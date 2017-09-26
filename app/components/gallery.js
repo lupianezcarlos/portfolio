@@ -4,7 +4,7 @@ angular.module('GalleryComponent',[])
        controller: function ($http, $scope) {
         var $this = this;
         
-        $http.get('/gallery').then(function (res) {
+        $http.get('/api/gallery').then(function (res) {
             $this.galleryData = res.data;
         });
       }

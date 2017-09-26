@@ -7,8 +7,9 @@ var express = require('express'),
     fs = require('fs'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
-    apiRoutes = require('./routes')
-    require('./config.js');
+    apiRoutes = require('./routes');
+    var config = require('./config.js');
+    var emailSender = require('./email.js').sender;
     var models = require('./models.js')
     var data = require('./data');
 
@@ -27,6 +28,8 @@ app.use('/uploads',express.static(uploadPath));
 var auth = require('./auth/index').auth;
 auth.login(app,false);
 
+
+emailSender(config.emailConfig.user);
 
 //resize images
 // fs.readdirSync(imgsPath).forEach(file => {
