@@ -1,5 +1,5 @@
 (function(){
-  // 'use strict';
+  'use strict';
 
   angular.module('GeneralControllers',[])
   .controller('NavController',function($scope,$location) {
@@ -16,24 +16,35 @@
       $scope.valid = false;
 
       $scope.sendEmailDetails = function(isValid) {
+           var user = $scope.user;
         if(isValid) {
-          $http.post('/api/contact/email',$scope.user).then(
-                function(data){
-                    $scope.error = false;
-                    $scope.valid = true;
-                },function(err) {
-                  console.log('err ' + err)
-                });
+                $http.post('/api/contact/email', user)
+                .then(
+                  function(response){
+                    // success callback
+                    if(response.data.status == 'ok') {
+                      $scope.valid = true;
+                      $scope.user = {};
+                    } 
+                  }, 
+                  function(response){
+                    // failure callback
+                    console.log('error' + response);
+                  }
+               );
           } else  {
               $scope.error = true;
+              $scope.valid = false;
               $timeout(function() {
                 $scope.error = false;
               }, 4000)
           }
-          $scope.user = {};
+          
       }
     
   })
   
 })()
+
+
 

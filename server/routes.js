@@ -61,16 +61,14 @@ var express = require('express'),
 
     openRoute.post('/contact/email',function(req,res) {
         let  user = req.body;
-
         if(utils.isEmail(user.email)) {
             var account = {
                 subject: user.name + ' ' + user.lastname + ' from "My Portfolio"',
                 email: user.email,
                 html: user.message
             }
-         emailSender(config.emailConfig, account);
-        } else {
-
+        //  emailSender(config.emailConfig, account);
+        res.status(200).json({status:'ok'})
         }
         
     });
