@@ -6,7 +6,8 @@ var express = require('express'),
     data = require('./data'),
     path = require('path'),
     multer = require('multer');
-    
+    var emailSender = require('./email.js').sender;
+    var config = require('./config.js');
  
     var multer = require('multer');
     var upload = multer({
@@ -59,8 +60,19 @@ var express = require('express'),
     });
 
     openRoute.post('/contact/email',function(req,res) {
-        console.log(req.body)
-        res.json(data);
+        let  user = req.body;
+
+        if(utils.isEmail(user.email)) {
+            var account = {
+                subject: user.name + ' ' + user.lastname + ' from "My Portfolio"',
+                email: user.email,
+                html: user.message
+            }
+         emailSender(config.emailConfig, account);
+        } else {
+
+        }
+        
     });
 
     openRoute.get('/login',function(req,res) {

@@ -9,7 +9,6 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     apiRoutes = require('./routes');
     var config = require('./config.js');
-    var emailSender = require('./email.js').sender;
     var models = require('./models.js')
     var data = require('./data');
 
@@ -29,7 +28,6 @@ var auth = require('./auth/index').auth;
 auth.login(app,false);
 
 
-// emailSender(config.emailConfig, config.emailUser);
 
 //resize images
 // fs.readdirSync(imgsPath).forEach(file => {

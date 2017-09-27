@@ -249,7 +249,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', end
     width: 100%;
     height: 100%;
 }
-
+.error , .valid {
+    font-size: 13px;
+    font-weight: 100;
+}
+.error {
+    color: #dca4a4;
+}
+.valid {
+    color: #adecc4
+}
 .progress {
     border-radius: 2px;
 }

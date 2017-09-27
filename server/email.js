@@ -24,8 +24,7 @@ const smtpTransport = require('nodemailer-smtp-transport');
             replyTo: user.email,
             to: account.user, // list of receivers
             subject: user.subject, // Subject line
-            text: 'Hello world?', // plain text body
-            html: '<b>Hello world?</b>' // html body
+            html: user.html // html body
         };
     
 
