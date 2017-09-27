@@ -35,6 +35,7 @@ angular.module('Myapp',[
   .state('base.contact',{
     url:'/contact',
     templateUrl:'./views/contact.html',
+    controller: 'ContactController'
   });
 
   $stateProvider.state({

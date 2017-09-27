@@ -3,14 +3,15 @@
     <div class=" verticalCenter">
         <div class="container">
                 <h2 class="contact-title">Let's get in touch!</h2>
-                <form novalidate>
+                <div ng-show="error" style="color: white;">You have an error in my form!</div>
+                <form  name="contactForm"  novalidate>
                         <div class="row">
                         
                         <div class="form-group col-md-6">
                             <input type="text" 
                                    class="form-control" id="_name" 
                                    aria-describedby="name" placeholder="Name" 
-                                   ng-model="user.name" required>
+                                   name="name" ng-model="user.name" required>
                             <label for="_name">Name</label>
                             <div class="line"></div>
                         </div>
@@ -44,7 +45,7 @@
                             <div class="line"></div>
                         </div>
                     </div>
-                    <input type="submit" class="btn color1" value="send"/>
+                    <button type="submit" class="btn color1" ng-click="sendEmailDetails(contactForm.$valid)">send</button>
                 </form>
                 </div>
     </div>

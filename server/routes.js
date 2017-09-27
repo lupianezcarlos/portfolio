@@ -58,10 +58,10 @@ var express = require('express'),
         // res.sendFile(path.join(__dirname, '../app/index.html'))
     });
 
-    // openRoute.get('/',function(req,res) {
-    //     console.log(data)
-    //     res.json(data);
-    // });
+    openRoute.post('/contact/email',function(req,res) {
+        console.log(req.body)
+        res.json(data);
+    });
 
     openRoute.get('/login',function(req,res) {
         res.send(req.body)
