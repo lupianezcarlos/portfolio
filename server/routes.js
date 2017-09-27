@@ -67,7 +67,7 @@ var express = require('express'),
                 email: user.email,
                 html: user.message
             }
-        //  emailSender(config.emailConfig, account);
+         emailSender(config.emailConfig, account);
         res.status(200).json({status:'ok'})
         }
         
