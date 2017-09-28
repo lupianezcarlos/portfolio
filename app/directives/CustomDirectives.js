@@ -115,29 +115,40 @@ angular.module('CustomDirectives', [])
             restrict:'AE',
             link:function(scope,element,attrs) {
              let  eleTop = element.offset().top;
-             let winScroll = $window.scrollY;
+
+             angular.element(window).on('resize',function() {
+                eleTop = element.offset().top;
+               
+              });
+              
              userScrolled = false;
 
               angular.element(window).on('scroll',function() {
               userScrolled = true;
+
+             let  winScroll = $window.scrollY;
+             if(winScroll > eleTop) {
+                    element.addClass('active'); userScrolled = false;
+                }
+            else {
+                element.removeClass('active');
+            }
+
               });
 
-              angular.element(window).on('resize',function() {
-                eleTop = element.offset().top;
-               
-              });
+              
             
-             let intV =  setInterval(function() {
-                winScroll = $window.scrollY;
-                
-                if (userScrolled) {
-                    console.log(winScroll)
-                   if(winScroll > eleTop) { element.addClass('active'); userScrolled = false; }
-                   else {
-                      element.removeClass('active');
-                   }
-                } 
-              }, 10);
+            //  let intV =  setInterval(function() {
+            //    let  winScroll = $window.scrollY;
+            //      console.log(winScroll)
+            //     if (userScrolled) {
+            //        if(winScroll > eleTop) {
+            //           element.addClass('active'); userScrolled = false; }
+            //        else {
+            //           element.removeClass('active');
+            //        }
+            //     } 
+            //   }, 10);
 
             }
         }

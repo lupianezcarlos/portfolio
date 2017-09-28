@@ -17,6 +17,7 @@
 
       $scope.sendEmailDetails = function(isValid) {
            var user = $scope.user;
+          
         if(isValid) {
                 $http.post('/api/contact/email', user)
                 .then(
@@ -35,7 +36,7 @@
           } else  {
               $scope.error = true;
               $scope.valid = false;
-              $timeout(function() {
+             var timer =  $timeout(function() {
                 $scope.error = false;
               }, 4000)
           }
