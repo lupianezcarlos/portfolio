@@ -4,7 +4,7 @@
         .controller('IndexCtrl', function ($scope, $http) {
             $this = this;
 
-            $http.get('/data').then(function (res) {
+            $http.get('/').then(function (res) {
 
                 $this.name = res.data;
                 console.log(data)

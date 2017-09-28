@@ -4,7 +4,7 @@ angular.module('Myapp',[
   'GalleryController',
   'GeneralControllers',
   'CustomDirectives',
-  // 'ngAnimate',
+  'in-viewport',
   'ui.router',
   'GalleryComponent',
   'angularFileUpload',

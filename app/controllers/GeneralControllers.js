@@ -44,6 +44,10 @@
       }
     
   })
+
+  .controller('sectionOneController',function($scope){
+       
+  })
   
 })()
 
