@@ -17,6 +17,7 @@ var uploadPath = path.join(__dirname,'../uploads');
 
 //middlewares
 app.use(cors());
+var carlos = 'carlos';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../app')));
@@ -39,13 +40,9 @@ auth.login(app,false);
 
 // });
 
-
-
 var websModels = models.websitesModel;
 
 var imgs = data.imgs;
-
-
 
 websModels.collection.drop();
 
@@ -64,7 +61,7 @@ app.use('/required',apiRoutes.apiAuth);
 app.use('/api',apiRoutes.apiOpen);
 
 
-const port = process.env.PORT;
+const port = config.port;
 app.listen(port, function () {
     console.log('Server listening on port ' + this.address().port);
 })

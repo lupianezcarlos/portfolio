@@ -1,17 +1,17 @@
-// process.env.PORT = 3000;
+var config = {};
 
+ config.port = process.env.PORT ||  3000;
 
-
-var emailAccount = {
+ config.emailAccount = {
     user: 'lupianezcarlos@hotmail.com',
     pass: 'lahabana-1982'
 }
 
-var user = {
+config.user = {
     email: 'lupianez73@gmail.com',
     subject: 'Lupi',
     text: ''
 }
 
-module.exports.emailConfig = emailAccount;
-module.exports.emailUser = user;
+module.exports = config;
+
