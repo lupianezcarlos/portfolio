@@ -3,13 +3,13 @@ var config = {};
  config.port = process.env.PORT ||  3000;
 
  config.emailAccount = {
-    user: 'lupianezcarlos@hotmail.com',
-    pass: 'lahabana-1982'
+    user: 'your_email',
+    pass: 'your_password'
 }
 
 config.user = {
-    email: 'lupianez73@gmail.com',
-    subject: 'Lupi',
+    email: 'email@email.com',
+    subject: 'username',
     text: ''
 }
 
